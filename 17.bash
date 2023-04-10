@@ -31,3 +31,5 @@ function generate()
 {
 	generateMd > 17.markdown	
 }
+
+generate
