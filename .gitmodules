@@ -7,3 +7,6 @@
 [submodule "1000001000"]
 	path = 1000001000
 	url = git@github.com:All-Dings/1000001000.git
+[submodule "260010000"]
+	path = 260010000
+	url = git@github.com:All-Dings/260010000.git
