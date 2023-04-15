@@ -27,9 +27,46 @@ function Generate_Md()
 	printf "Generated: $(date)"
 }
 
-function Generate()
+function Update_Sub_Modules()
+{
+	local Tag=$1
+	local Old_Tag;
+
+	for Git_Sub_Module in $(git submodule | awk '{print $2}')
+	do
+		>&2 echo "Updating: $Git_Sub_Module"
+
+		Old_Tag=$(git tag -l | grep $Tag)
+		cd $Git_Sub_Module
+		git pull origin Master
+		git checkout Master
+		git pull --rebase
+	
+		if [ "$Old_Tag" != "" ]; then
+			git tag -d $Tag
+		fi
+		git push origin :refs/tags/$Tag
+		git tag $Tag
+		git push --tags;
+		cd ..
+	done
+}
+
+function Generate_All_Things()
 {
 	Generate_Md > 17.markdown	
 }
 
-Generate
+function Render
+{
+	local Tag=$1
+
+	if [ "$Tag" == "" ]; then
+		>&2 echo "Usage 17.bash DAY-TAG"
+		exit 1
+	fi
+	Update_Sub_Modules $Tag
+	Generate_All_Things
+}
+
+Render $1
