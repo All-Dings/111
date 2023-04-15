@@ -49,7 +49,9 @@ function Update_Sub_Modules()
 		git tag $Tag
 		git push --tags;
 		cd ..
+		git add $Git_Sub_Module
 	done
+	git commit -m "Update Sub-Modules"
 }
 
 function Generate_All_Things()
