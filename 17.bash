@@ -54,8 +54,9 @@ function Update_Sub_Modules()
 	git commit -m "Update Sub-Modules"
 }
 
-function Generate_All_Things()
+function Generate_All_Dings()
 {
+	echo "Generating All-Dings ..."
 	Generate_Md > 17.markdown	
 }
 
@@ -69,7 +70,7 @@ function Render
 	fi
 	Update_Sub_Modules $Tag
 	make -f 300001000.make Create_Hard_Links
-	Generate_All_Things
+	Generate_All_Dings
 }
 
 Render $1
