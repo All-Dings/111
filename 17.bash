@@ -68,7 +68,7 @@ function Render
 		exit 1
 	fi
 	Update_Sub_Modules $Tag
-	make -f 
+	make -f 300001000.make Create_Hard_Links
 	Generate_All_Things
 }
 
