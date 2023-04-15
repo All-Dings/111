@@ -16,9 +16,13 @@ Number_File_List += $(wildcard 260010000/*.*)
 Number_File_List_Local := $(notdir $(Number_File_List))
 Number_File_List_Local := $(filter-out README.md,$(Number_File_List_Local))
 
+## Initialize Sub-Modules
+
+Sub_Module_Init:
+	git submodule update --init --recursive
 ## All-Rule
 
-all: $(Number_File_List_Local)
+all: Sub_Module_Init $(Number_File_List_Local)
 
 ## Generate HTML-Files
 
