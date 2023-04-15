@@ -6,7 +6,7 @@
 source 16.bash
 
 
-function lsNamesMd()
+function Ls_Names_Md()
 {
 	local name file
 
@@ -18,18 +18,18 @@ function lsNamesMd()
 	done
 }
 
-function generateMd()
+function Generate_Md()
 {
 	printf "# List of all Things\n"
 	printf "\n"
-	lsNamesMd
+	Ls_Names_Md
 	printf "\n"
 	printf "Generated: $(date)"
 }
 
-function generate()
+function Generate()
 {
-	generateMd > 17.markdown	
+	Generate_Md > 17.markdown	
 }
 
-generate
+Generate
