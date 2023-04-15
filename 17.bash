@@ -68,6 +68,7 @@ function Render
 		exit 1
 	fi
 	Update_Sub_Modules $Tag
+	make -f 
 	Generate_All_Things
 }
 

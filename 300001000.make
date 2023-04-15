@@ -18,7 +18,11 @@ Number_File_List_Local := $(filter-out README.md,$(Number_File_List_Local))
 
 ## All-Rule
 
-all: Sub_Module_Init $(Number_File_List_Local)
+all: Sub_Module_Init Create_Hard_Links
+
+## Create Hard-Links for all Number-Files
+
+Create_Hard_Links: $(Number_File_List_Local)
 
 ## Initialize Sub-Modules
 
