@@ -6,6 +6,10 @@
 Number_File_List += $(wildcard 0/*.*)
 Number_File_List += $(wildcard 888/*.*)
 Number_File_List += $(wildcard 1000001000/*.*)
+Number_File_List += $(wildcard 140100000/*.*)
+Number_File_List += $(wildcard 1997080300/*.*)
+Number_File_List += $(wildcard 250000000/*.*)
+Number_File_List += $(wildcard 260010000/*.*)
 
 ## Git-Sub-Module Number-Files without leading Directory
 
