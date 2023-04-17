@@ -30,22 +30,19 @@ function Generate_Md()
 function Update_Sub_Modules()
 {
 	local Tag=$1
-	local Old_Tag;
 
 	for Git_Sub_Module in $(git submodule | awk '{print $2}')
 	do
 		>&2 echo "Updating: $Git_Sub_Module"
 
-		Old_Tag=$(git tag -l | grep $Tag)
 		cd $Git_Sub_Module
 		git pull origin Master
 		git checkout Master
 		git pull --rebase
 	
-		if [ "$Old_Tag" != "" ]; then
-			git tag -d $Tag
-		fi
-		git push origin :refs/tags/$Tag
+		git tag -d $Tag
+		git push --delete origin $Tag
+		# git push origin :refs/tags/$Tag
 		git tag $Tag
 		git push --tags;
 		cd ..
