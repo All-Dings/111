@@ -38,7 +38,7 @@ html:
 ## Create-Hard-Link-Rule
 
 %: */%
-	ln  $< $@
+	ln -f $< $@
 
 ## Clean-Rule
 
