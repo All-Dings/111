@@ -19,7 +19,7 @@ Number_File_List_Local := $(filter-out README.md,$(Number_File_List_Local))
 
 ## All-Rule
 
-all: Sub_Module_Init Create_Hard_Links
+All: Create_Hard_Links Html
 
 ## Create Hard-Links for all Number-Files
 
@@ -32,7 +32,7 @@ Sub_Module_Init:
 
 ## Generate HTML-Files
 
-html:
+Html:
 	make -f 300000004.make
 
 ## Create-Hard-Link-Rule
@@ -42,8 +42,8 @@ html:
 
 ## Clean-Rule
 
-clean:
+Clean:
 	make -f 300000004.make clean
 	rm -f $(Number_File_List_Local)
 
-.PHONY: all clean
+.PHONY: All Clean
