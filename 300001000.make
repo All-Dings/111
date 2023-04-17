@@ -16,6 +16,7 @@ Number_File_List += $(wildcard 260010000/*.*)
 
 Number_File_List_Local := $(notdir $(Number_File_List))
 Number_File_List_Local := $(filter-out README.md,$(Number_File_List_Local))
+Number_File_List_Local := $(filter-out Makefile,$(Number_File_List_Local))
 
 ## All-Rule
 
