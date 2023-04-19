@@ -51,19 +51,19 @@ function Update_Sub_Modules()
 	git commit -m "Update Sub-Modules"
 }
 
-function Generate_All_Dings()
+function Generate_Dings()
 {
 	echo "Generating All-Dings ..."
-	Generate_Md > 17.markdown	
+	Generate_Md > 17.md
 }
 
-function Generate_All_Dings_Fast_And_Good()
+function Generate_Dings_Fast_And_Good()
 {
-	local All_Dings_File="17.markdown"
+	local Dings_File="17.md
 
-	echo "# All Dings" > $All_Dings_File
-	echo >>  $All_Dings_File
-	echo "" | cat 0.txt | (while read -r Line; do echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3)[ ]+(.*)#[\3](\1.\2)#g'; done) > $All_Dings_File
+	echo "# Dings-File" > $Dings_File
+	echo >>  $Dings_File
+	echo "" | cat 0.txt | (while read -r Line; do echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3)[ ]+(.*)#[\3](\1.\2)#g'; done) > $Dings_File
 }
 
 
@@ -77,7 +77,7 @@ function Render
 	fi
 	Update_Sub_Modules $Tag
 	make -f 300001000.make Create_Hard_Links
-	Generate_All_Dings_Fast_And_Good
+	Generate_Dings_Fast_And_Good
 }
 
 Render $1
