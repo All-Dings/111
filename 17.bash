@@ -57,6 +57,16 @@ function Generate_All_Dings()
 	Generate_Md > 17.markdown	
 }
 
+function Generate_All_Dings_Fast_And_Good()
+{
+	local All_Dings_File="17.markdown"
+
+	echo "# All Dings" > $All_Dings_File
+	echo >>  $All_Dings_File
+	echo "" | cat 0.txt | (while read -r Line; do echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3)[ ]+(.*)#[\3](\1.\2)#g'; done) > $All_Dings_File
+}
+
+
 function Render
 {
 	local Tag=$1
@@ -67,7 +77,7 @@ function Render
 	fi
 	Update_Sub_Modules $Tag
 	make -f 300001000.make Create_Hard_Links
-	Generate_All_Dings
+	Generate_All_Dings_Fast_And_Good
 }
 
 Render $1
