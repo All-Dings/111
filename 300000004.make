@@ -3,7 +3,7 @@
 
 Md-File-List = $(wildcard *.md)
 Html-File-List := $(subst .md,.html,$(Md-File-List)) index.html
-Html-File-List := $(addprefix ${DINGS_DAY}/, $(Html-File-List))
+Html-File-List := $(addprefix ${Dings_Day}/, $(Html-File-List))
 
 define Markdown_to_Html
 	pandoc --standalone --template 300000002.htm $(1) -o $(2)
@@ -12,16 +12,16 @@ define Markdown_to_Html
 endef
 
 all: Html-Files
-	echo "All-Things-Make-File:${DINGS_DAY}"
+	echo "All-Things-Make-File:${Dings_Day}"
 
 Html-Files: $(Html-File-List)
 
 ## Web-Server-Directory-Index-Rule
 
-${DINGS_DAY}/index.html: 300000006.md
+${Dings_Day}/index.html: 300000006.md
 	$(call Markdown_to_Html, $<, $@)
 
-${DINGS_DAY}/%.html: %.md
+${Dings_Day}/%.html: %.md
 	$(call Markdown_to_Html, $<, $@)
 
 clean:
