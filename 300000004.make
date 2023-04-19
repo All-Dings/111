@@ -15,10 +15,13 @@ define Markdown_to_Html
 	sed -i '' -E 's#<body>#<body><pre class="console"><code>Warning: Although I give my very Best, Mistakes are still possible.</code></pre>#g' $(2)
 endef
 
-all: Html-Files
+all: Git-Sub-Module-Init Html-Files
 	echo "All-Things-Make-File:${Dings_Day}"
 
 Html-Files: $(Html-File-List)
+
+Git-Sub-Module-Init:
+	git submodule update --init
 
 ## Web-Server-Directory-Index-Rule
 
