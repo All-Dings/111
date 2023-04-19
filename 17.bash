@@ -69,10 +69,10 @@ function Generate_Dings_Fast_And_Good()
 
 function Render
 {
-	local Tag=$1
+	local Tag=$Dings_Day
 
 	if [ "$Tag" == "" ]; then
-		>&2 echo "Usage 17.bash DAY-TAG"
+		>&2 echo "Error: Bash Variable "Dings_Day" not set"
 		exit 1
 	fi
 	Update_Sub_Modules $Tag
