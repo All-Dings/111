@@ -5,6 +5,24 @@
 
 Null=""
 
+function File_Name_Length_Test()
+{
+	local File_Name_Chunk=""
+	local File_Length
+	local File_Name=""
+
+	for File_Length in {1..10000}; do
+		File_Name="${File_Name}x"
+		touch $File_Name > /dev/null
+		if [ $? -eq 0 ]; then
+			rm -f $File_Name
+		else
+			printf "Fail: $File_Length"
+			exit 1
+		fi
+	done
+}
+
 function mwReturnOnNull()
 {
 	local returnString=$1
