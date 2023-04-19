@@ -24,7 +24,7 @@ All: Html
 
 ## Create Hard-Links for all Number-Files
 
-Create_Hard_Links: $(Number_File_List_Local)
+Create_Hard_Links: Sub_Module_Init $(Number_File_List_Local)
 
 ## Initialize Sub-Modules
 
