@@ -20,7 +20,7 @@ Number_File_List_Local := $(filter-out Makefile,$(Number_File_List_Local))
 
 ## All-Rule
 
-All: Create_Hard_Links Html
+All: Html
 
 ## Create Hard-Links for all Number-Files
 
@@ -33,7 +33,7 @@ Sub_Module_Init:
 
 ## Generate HTML-Files
 
-Html:
+Html: Create_Hard_Links
 	make -f 300000004.make
 
 ## Create-Hard-Link-Rule
