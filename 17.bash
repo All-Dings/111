@@ -59,11 +59,11 @@ function Generate_Dings()
 
 function Generate_Dings_Fast_And_Good()
 {
-	local Dings_File="17.md
+	local Dings_File="17.md"
 
 	echo "# Dings-File" > $Dings_File
 	echo >>  $Dings_File
-	echo "" | cat 0.txt | (while read -r Line; do echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3)[ ]+(.*)#[\3](\1.\2)#g'; done) > $Dings_File
+	cat 0.txt | (while read -r Line; do echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3)[ ]+(.*)#[\3](\1.\2)#g'; done) >> $Dings_File
 }
 
 
