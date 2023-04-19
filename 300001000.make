@@ -20,16 +20,17 @@ Number_File_List_Local := $(filter-out Makefile,$(Number_File_List_Local))
 
 ## All-Rule
 
-All: Html
+All: Sub_Module_Init Html
 
 ## Create Hard-Links for all Number-Files
 
-Create_Hard_Links: Sub_Module_Init $(Number_File_List_Local)
+Create_Hard_Links: $(Number_File_List_Local)
 
 ## Initialize Sub-Modules
 
 Sub_Module_Init:
 	git submodule update --init --recursive
+	make -f 300001000.make Create_Hard_Links
 
 ## Generate HTML-Files
 
