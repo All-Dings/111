@@ -18,10 +18,13 @@ endef
 all: Git-Sub-Module-Init Html-Files
 	echo "All-Things-Make-File:${Dings_Day}"
 
-Html-Files: $(Html-File-List)
+Html-Files: $(Dings_Day) $(Html-File-List)
 
 Git-Sub-Module-Init:
 	git submodule update --init
+
+$(Dings_Day):
+	mkdir $(Dings_Day)
 
 ## Web-Server-Directory-Index-Rule
 
