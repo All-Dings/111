@@ -1,6 +1,10 @@
 # All-Things-Makefile-File
 #
 
+ifndef Dings_Day
+$(error Error: Bash Variable "Dings_Day" not set)
+endif
+
 Md-File-List = $(wildcard *.md)
 Html-File-List := $(subst .md,.html,$(Md-File-List)) index.html
 Html-File-List := $(addprefix ${Dings_Day}/, $(Html-File-List))
