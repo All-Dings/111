@@ -71,7 +71,9 @@ function Generate_Dings_Fast_And_Correct()
 		elif [ "${Line:0:1}" == " " ]; then
 			continue
 		elif [ "${Line:0:1}" == "#" ]; then
+			echo >> $Dings_File
 			echo $Line >> $Dings_File
+			echo >> $Dings_File
 		else
 			Link=$(echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3|py|bash|html|make|pl)[ ]+(.*)#[\3](\1.\2)#g')
 			echo "- $Link" >> $Dings_File
