@@ -57,13 +57,26 @@ function Generate_Dings()
 	Generate_Md > 17.md
 }
 
-function Generate_Dings_Fast_And_Good()
+function Generate_Dings_Fast_And_Correct()
 {
 	local Dings_File="17.md"
+	local Link
 
-	echo "# Dings-File" > $Dings_File
-	echo >> $Dings_File
-	cat 0.txt | (while read -r Line; do echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3)[ ]+(.*)#[\3](\1.\2)#g'; done) >> $Dings_File
+	echo > $Dings_File
+
+	cat 0.txt | while read -r Line
+	do
+		if [ "$Line" == "" ]; then
+			continue
+		elif [ "${Line:0:1}" == " " ]; then
+			continue
+		elif [ "${Line:0:1}" == "#" ]; then
+			echo $Line >> $Dings_File
+		else
+			Link=$(echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3|py|bash|html|make|pl)[ ]+(.*)#[\3](\1.\2)#g')
+			echo "- $Link" >> $Dings_File
+		fi
+	done
 }
 
 
@@ -77,7 +90,7 @@ function Render
 	fi
 	Update_Sub_Modules $Tag
 	make -f 300001000.make Create_Hard_Links
-	Generate_Dings_Fast_And_Good
+	Generate_Dings_Fast_And_Correct
 }
 
 Render $1
