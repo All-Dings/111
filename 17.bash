@@ -48,12 +48,12 @@ function Update_Sub_Modules()
 		cd ..
 		git add $Git_Sub_Module
 	done
-	git commit -m "Update Sub-Modules"
+	git commit -m "Update Sub_Modules"
 }
 
 function Generate_Dings()
 {
-	echo "Generating All-Dings ..."
+	echo "Generating All_Dings ..."
 	Generate_Md > 17.md
 }
 

@@ -1,7 +1,7 @@
-# Rendering-Makefile
+# Rendering_Makefile
 #
 
-## Git-Sub-Module Number-Files
+## Git_Sub_Module Number_Files
 
 Number_File_List += $(wildcard 0/*.*)
 Number_File_List += $(wildcard 888/*.*)
@@ -12,37 +12,37 @@ Number_File_List += $(wildcard 1997080300/*.*)
 Number_File_List += $(wildcard 250000000/*.*)
 Number_File_List += $(wildcard 260010000/*.*)
 
-## Git-Sub-Module Number-Files without leading Directory
+## Git_Sub_Module Number_Files without leading Directory
 
 Number_File_List_Local := $(notdir $(Number_File_List))
-Number_File_List_Local := $(filter-out README.md,$(Number_File_List_Local))
-Number_File_List_Local := $(filter-out Makefile,$(Number_File_List_Local))
+Number_File_List_Local := $(filter_out README.md,$(Number_File_List_Local))
+Number_File_List_Local := $(filter_out Makefile,$(Number_File_List_Local))
 
-## All-Rule
+## All_Rule
 
 All: Sub_Module_Init Html
 
-## Create Hard-Links for all Number-Files
+## Create Hard_Links for all Number_Files
 
 Create_Hard_Links: $(Number_File_List_Local)
 
-## Initialize Sub-Modules
+## Initialize Sub_Modules
 
 Sub_Module_Init:
 	git submodule update --init --recursive
 	make -f 300001000.make Create_Hard_Links
 
-## Generate HTML-Files
+## Generate HTML_Files
 
 Html: Create_Hard_Links
 	make -f 300000004.make
 
-## Create-Hard-Link-Rule
+## Create_Hard_Link_Rule
 
 %: */%
 	ln -f $< $@
 
-## Clean-Rule
+## Clean_Rule
 
 Clean:
 	make -f 300000004.make clean
