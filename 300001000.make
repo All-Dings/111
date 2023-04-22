@@ -15,8 +15,8 @@ Number_File_List += $(wildcard 260010000/*.*)
 ## Git_Sub_Module Number_Files without leading Directory
 
 Number_File_List_Local := $(notdir $(Number_File_List))
-Number_File_List_Local := $(filter_out README.md,$(Number_File_List_Local))
-Number_File_List_Local := $(filter_out Makefile,$(Number_File_List_Local))
+Number_File_List_Local := $(filter-out README.md,$(Number_File_List_Local))
+Number_File_List_Local := $(filter-out Makefile,$(Number_File_List_Local))
 
 ## All_Rule
 
