@@ -56,6 +56,14 @@ Blockquote {
 }
 
 /*
+ * ## Header
+ */
+Header {
+	Margin-Bottom: 4em;
+	Text-Align: center;
+}
+
+/*
  * ## Horizontal-Ruler
  */
 Hr {
@@ -168,14 +176,6 @@ Th {
 
 Td {
 	Padding: 0.125em 0.5em 0.25em 0.5em;
-}
-
-/*
- * # Header
- */
-Header {
-	Margin-Bottom: 4em;
-	Text-Align: center;
 }
 
 /*
