@@ -31,7 +31,7 @@ $(Dings_Day):
 ${Dings_Day}/index.html: 300000006.md
 	$(call Markdown_to_Html, $<, $@)
 
-${Dings_Day}/%.html: %.md 300000004.make 300000013.css
+${Dings_Day}/%.html: %.md 300000004.make 300000013.css 300000002.htm
 	$(call Markdown_to_Html, $<, $@)
 
 clean:
