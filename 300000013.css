@@ -64,16 +64,6 @@ Header {
 }
 
 /*
- * ## Horizontal-Ruler
- */
-Hr {
-	Background-Color: var(--Dings-Grey-007);
-	Border: none;
-	Height: 1px;
-	Margin: 1em 0;
-}
-
-/*
  * ## Headings
  */
 H1, H2, H3, H4, H5, H6 {
@@ -92,6 +82,16 @@ H6 {
 	Font-Weight: normal;
 	Margin-Top:-7px;
 	Margin-Bottom:-3px;
+}
+
+/*
+ * ## Horizontal-Ruler
+ */
+Hr {
+	Background-Color: var(--Dings-Grey-007);
+	Border: none;
+	Height: 1px;
+	Margin: 1em 0;
 }
 
 /*
