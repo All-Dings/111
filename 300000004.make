@@ -10,7 +10,7 @@ Html_File_List := $(subst .md,.html,$(Md_File_List)) index.html
 Html_File_List := $(addprefix ${Dings_Day}/, $(Html_File_List))
 
 define Markdown_to_Html
-	pandoc --standalone --template 300000002.htm $(1) -o $(2)
+	pandoc --standalone $(1) -o $(2)
 	sed -i '' -E 's/(href="[0-9]+)\.md/\1\.html/g' $(2)
 	sed -i '' -E 's#<body>#<body><pre class="console"><code>Warning: Although I give my very Best, Mistakes are still possible.</code></pre>#g' $(2)
 endef
@@ -31,7 +31,7 @@ $(Dings_Day):
 ${Dings_Day}/index.html: 300000006.md
 	$(call Markdown_to_Html, $<, $@)
 
-${Dings_Day}/%.html: %.md
+${Dings_Day}/%.html: %.md 300000004.make 300000013.css
 	$(call Markdown_to_Html, $<, $@)
 
 clean:
