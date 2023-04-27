@@ -95,6 +95,7 @@ Img {
  * ## Ordered-Lists and Unordered-Lists
  */
 Ol, Ul {
+	Line-Height:125%;
 	List-Style-Type: circle;
 	Margin-Top: 1em;
 	Padding-Left: 1.7em;
