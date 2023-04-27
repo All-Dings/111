@@ -22,7 +22,7 @@
  * ## Document-Body
  */
 Body {
-	Background-Color: var(--Dings-Yellow-500);
+	Background-Color: var(--Dings-Yellow-900);
 	Hyphens: auto;
 	Margin: 0 auto;
 	Max-Width: 48em;
