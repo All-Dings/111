@@ -34,7 +34,7 @@ ${Dings_Day}/index.html: 300000006.md
 ${Dings_Day}/300000013.css: 300000013.css
 	cp $< $@
 
-${Dings_Day}/%.html: %.md 300000004.make 300000013.css 300000002.htm
+${Dings_Day}/%.html: %.md 300000004.make 300000014.css 300000002.htm
 	$(call Markdown_to_Html, $<, $@)
 
 clean:
