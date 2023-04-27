@@ -3,9 +3,63 @@
 /* ## Pre-Tag */
 
 pre {
-        background-color: #F8F9FA;
-        border-style: solid;
-        border-color: #A1AAB1;
-        border-radius: 4px;
-        padding: 5px;
+	background-color: #F8F9FA;
+	border-style: solid;
+	border-color: #A1AAB1;
+	border-radius: 4px;
+	padding: 5px;
 }
+
+/*
+@font-face {
+	font-family: 'basisfettkursivschrift';
+	src: local('Arial Bold Italic'), local('Helvetica Bold Italic'),
+	url('../font/Carlito-Italic.eot'),
+	url('../font/Carlito-Italic.eot?#iefix') format('embedded-opentype'),
+	url('../font/Carlito-Italic.woff2') format('woff2'),
+	url('../font/Carlito-Italic.woff') format('woff'),
+	url('../font/Carlito-Italic.ttf')  format('truetype');
+}
+*/
+
+/* ## Html-Attributes for Html-Tags */
+body, td, th, input, select, textarea {
+	font-family:Arial;
+	font-size:14px;
+	line-height:140%;
+}
+
+/* ## Html-Select-Field */
+select {
+	padding-left:3px;
+}
+
+/* ## Html-Tables */
+th, td {
+	text-align:left;
+	vertical-align:top;
+}
+
+/* ## Html-Table-Heading */
+th {
+}
+
+/* ## Bold */
+b {
+	color:#404040; /* 4d4d4d */
+}
+
+/* ## Html-Link (href) */
+a {
+	/* ### No-Underline */
+	text-decoration:none;
+}
+
+/* ## Link-not-used */
+a:link {color: black;}
+/* ## Link-vistied */
+a:visited {color: black;}
+/* ## Link-on-Click */
+a:active {color: black;}
+/* ## Link-on-Mouse-Hover */
+a:hover {color: gray;text-decoration:underline;}
