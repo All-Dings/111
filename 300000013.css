@@ -14,13 +14,15 @@
 	--Dings-Grey-020: #a1a1a1;
 	--Dings-Grey-025: #e7e7e7;
 	--Dings-Grey-040: #f8f8f8;
-	--Dings-Grey-900: #fdfdfd
+	--Dings-Grey-900: #fdfdfd;
+	--Dings-Yellow-900: #f2f2ea;
 }
 
 /*
  * ## Document-Body
  */
 Body {
+	Background-Color: var(--Dings-Yellow-500);
 	Hyphens: auto;
 	Margin: 0 auto;
 	Max-Width: 48em;
