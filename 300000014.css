@@ -5,13 +5,14 @@
 /*
  * ## Define Variables
  */
-:root {
+:Root {
 	--Dings-Red-010:  #f46d34;
 	--Dings-Blue-040: #506e9d;
 	--Dings-Grey-007: #191919;
 	--Dings-Grey-010: #444444;
 	--Dings-Gray-015: #616161;
 	--Dings-Grey-020: #a1a1a1;
+	--Dings-Grey-022: #d1d1d1;
 	--Dings-Grey-025: #e7e7e7;
 	--Dings-Grey-040: #f8f8f8;
 	--Dings-Grey-900: #fdfdfd;
@@ -23,15 +24,16 @@
  */
 Body {
 	Background-Color: var(--Dings-Yellow-900);
-	Hyphens: auto;
-	Margin: 0 auto;
+	Hyphens: Auto;
+	Line-Height: 1.3;
+	Margin: 0 Auto;
 	Max-Width: 48em;
-	Overflow-Wrap: break-word;
+	Overflow-Wrap: Break-Word;
 	Padding-Left: 50px;
 	Padding-Right: 50px;
 	Padding-Top: 50px;
 	Padding-Bottom: 50px;
-	Text-Rendering: optimizeLegibility;
+	Text-Rendering: OptimizeLegibility;
 }
 
 /*
@@ -60,7 +62,7 @@ Blockquote {
  */
 Header {
 	Margin-Bottom: 4em;
-	Text-Align: center;
+	Text-Align: Center;
 }
 
 /*
@@ -70,8 +72,20 @@ H1, H2, H3, H4, H5, H6 {
 	Margin-Top: 1.4em;
 }
 
+H1 {
+	Font-Size: 2em;
+}
+
+H3 {
+	Font-Size: 1.3em;
+}
+
+H4 {
+	Font-Size: 1.1em;
+}
+
 H5, H6 {
-	Font-Size: 1em;
+	Font-Size: 1.1em;
 	Font-Style: italic;
 }
 
@@ -79,7 +93,7 @@ H5, H6 {
  * H6 is used for Dings-Topics:
  */
 H6 {
-	Font-Weight: normal;
+	Font-Weight: Normal;
 	Margin-Top:-7px;
 	Margin-Bottom:-3px;
 }
@@ -89,7 +103,7 @@ H6 {
  */
 Hr {
 	Background-Color: var(--Dings-Grey-007);
-	Border: none;
+	Border: None;
 	Height: 1px;
 	Margin: 1em 0;
 }
@@ -105,8 +119,7 @@ Img {
  * ## Ordered-Lists and Unordered-Lists
  */
 Ol, Ul {
-	Line-Height:125%;
-	List-Style-Type: circle;
+	List-Style-Type: Circle;
 	Margin-Top: 1em;
 	Padding-Left: 1.7em;
 }
@@ -122,38 +135,32 @@ P {
  * ## Pre-Format and Code
  */
 Pre {
-	Background: var(--Dings-Grey-040);
-	Border: 1px solid #ddd;
-	Border-Left: 3px solid var(--Dings-Red-010);
+	Background-Color: var(--Dings-Grey-040);
+	Border: 1px Solid var(--Dings-Grey-022);
+	Border-Left: 3px Solid var(--Dings-Red-010);
 	Color: var(--Dings-Gray-015);
-	Display: block;
-	Font-Family: monospace;
-	Font-Size: 15px;
-	Hyphens: none;
-	Page-Break-Inside: avoid;
-	Line-Height: 1.6;
+	Font-Family: Menlo, Monaco, Consolas, 'Lucida Console', Monospace;
+	Font-Size: 13.5px;
+	Hyphens: None;
 	Margin-Bottom: 1.6em;
+	Max-Height: 250px;
 	Max-Width: 100%;
-	Overflow: auto;
+	Overflow: Auto;
 	Padding: 1em 1.5em;
 }
 
 Code {
-	Font-Family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-	Font-Size: 85%;
-	Hyphens: manual;
-	Margin: 0;
 }
 
 /*
  * ## Table
  */
 Table {
-	Display: block;
-	Border-Collapse: collapse;
-	Font-Variant-Numeric: lining-nums tabular-nums;
+	Display: Block;
+	Border-Collapse: Collapse;
+	Font-Variant-Numeric: Lining-Nums Tabular-Nums;
 	Margin: 1em 0;
-	Overflow-x: auto;
+	Overflow-x: Auto;
 	Width: 100%;
 }
 
@@ -162,13 +169,13 @@ Table Caption {
 }
 
 Tbody {
-	Border-Bottom: 1px solid var(--Dings-Grey-007);
-	Border-Top: 1px solid var(--Dings-Grey-007);
+	Border-Bottom: 1px Solid var(--Dings-Grey-007);
+	Border-Top: 1px Solid var(--Dings-Grey-007);
 	Margin-Top: 0.5em;
 }
 
 Th {
-	Border-Top: 1px solid var(--Dings-Grey-007);
+	Border-Top: 1px Solid var(--Dings-Grey-007);
 	Padding: 0.25em 0.5em 0.25em 0.5em;
 }
 
@@ -201,21 +208,21 @@ Td {
  *   Color: var(--Dings-Grey-007);
  * }
  *
- * #TOC li {
- *  list-style: none;
+ * #TOC Li {
+ *  List-Style: None;
  * }
- * #TOC ul {
- *  padding-left: 1.3em;
+ * #TOC Ul {
+ *  Padding-Left: 1.3em;
  * }
- * #TOC > ul {
- *  padding-left: 0;
+ * #TOC > Ul {
+ *  Padding-Left: 0;
  * }
- * #TOC a:not(:hover) {
- *  text-decoration: none;
+ * #TOC a:not(:Hover) {
+ *  Text-Decoration: None;
  * }
  *
  * div.columns{display: flex; gap: min(4vw, 1.5em);}
- * div.column{flex: auto; overflow-x: auto;}
+ * div.column{flex: Auto; overflow-x: Auto;}
  * div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
  * ul.task-list{list-style: none;}
  * ul.task-list li input[type="checkbox"] {
@@ -223,7 +230,7 @@ Td {
  *  margin: 0 0.8em 0.2em -1.6em;
  *  vertical-align: middle;
  * }
- * .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+ * .display.math{display: block; text-align: center; margin: 0.5rem Auto;}
  *
  * @font-face {
  *       font-family: 'basisfettkursivschrift';
