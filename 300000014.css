@@ -1,10 +1,6 @@
-/*
- * # My-Dings-Css-File
- */
+/* # My-Dings-Css-File */
 
-/*
- * ## Define Variables
- */
+/* ## Define Variables */
 :Root {
 	--Dings-Red-010:  #f46d34;
 	--Dings-Blue-040: #506e9d;
@@ -19,9 +15,7 @@
 	--Dings-Yellow-900: #f2f2ea;
 }
 
-/*
- * ## Document-Body
- */
+/* ## Document-Body */
 Body {
 	Background-Color: var(--Dings-Yellow-900);
 	Hyphens: Auto;
@@ -36,9 +30,7 @@ Body {
 	Text-Rendering: OptimizeLegibility;
 }
 
-/*
- * ## Links
- */
+/* ## Links */
 A {
 	Color: var(--Dings-Grey-007);
 }
@@ -47,9 +39,7 @@ A:Visited {
 	Color: var(--Dings-Grey-007);
 }
 
-/*
- * ## Blockquote
- */
+/* ## Blockquote */
 Blockquote {
 	Border-Left: 2px solid var(--Dings-Grey-025);
 	Color: var(--Dings-Gray-015);
@@ -57,17 +47,13 @@ Blockquote {
 	Padding-Left: 1em;
 }
 
-/*
- * ## Header
- */
+/* ## Header */
 Header {
 	Margin-Bottom: 4em;
 	Text-Align: Center;
 }
 
-/*
- * ## Headings
- */
+/* ## Headings */
 H1, H2, H3, H4, H5, H6 {
 	Margin-Top: 1.4em;
 }
@@ -89,18 +75,14 @@ H5, H6 {
 	Font-Style: italic;
 }
 
-/*
- * H6 is used for Dings-Topics:
- */
+/* H6 is used for Dings-Topics: */
 H6 {
 	Font-Weight: Normal;
 	Margin-Top:-7px;
 	Margin-Bottom:-3px;
 }
 
-/*
- * ## Horizontal-Ruler
- */
+/* ## Horizontal-Ruler */
 Hr {
 	Background-Color: var(--Dings-Grey-007);
 	Border: None;
@@ -108,32 +90,24 @@ Hr {
 	Margin: 1em 0;
 }
 
-/*
- * ## Image
- */
+/* ## Image */
 Img {
 	Max-Width: 100%;
 }
 
-/*
- * ## Ordered-Lists and Unordered-Lists
- */
+/* ## Ordered-Lists and Unordered-Lists */
 Ol, Ul {
 	List-Style-Type: Circle;
 	Margin-Top: 1em;
 	Padding-Left: 1.7em;
 }
 
-/*
- * ## New Paragraph
- */
+/* ## New Paragraph */
 P {
 	Margin: 1em 0;
 }
 
-/*
- * ## Pre-Format and Code
- */
+/* ## Pre-Format and Code */
 Pre {
 	Background-Color: var(--Dings-Grey-040);
 	Border: 1px Solid var(--Dings-Grey-022);
@@ -152,9 +126,7 @@ Pre {
 Code {
 }
 
-/*
- * ## Table
- */
+/* ## Table */
 Table {
 	Display: Block;
 	Border-Collapse: Collapse;
@@ -184,62 +156,62 @@ Td {
 }
 
 /*
- * ## Attribution
- *
- * - Auto-generated Css: Pan-Doc-Tool
- * - How can I style code listings using CSS: https://stackoverflow.com/posts/48694906/revisions
- * - W3-Schools: https://www.w3schools.com/css
- *
- * ## Todos:
- *
- * ### Disable Hover-on-Headings
- *
- * ```
- * A:Hover {
- *      color: var(--Dings-Red-010);
- * }
- * ```
- *
- * ### Understand this ...
- *
- * ```
- * Html {
- *   Background-Color: var(--Dings-Grey-900);
- *   Color: var(--Dings-Grey-007);
- * }
- *
- * #TOC Li {
- *  List-Style: None;
- * }
- * #TOC Ul {
- *  Padding-Left: 1.3em;
- * }
- * #TOC > Ul {
- *  Padding-Left: 0;
- * }
- * #TOC a:not(:Hover) {
- *  Text-Decoration: None;
- * }
- *
- * div.columns{display: flex; gap: min(4vw, 1.5em);}
- * div.column{flex: Auto; overflow-x: Auto;}
- * div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
- * ul.task-list{list-style: none;}
- * ul.task-list li input[type="checkbox"] {
- *  width: 0.8em;
- *  margin: 0 0.8em 0.2em -1.6em;
- *  vertical-align: middle;
- * }
- * .display.math{display: block; text-align: center; margin: 0.5rem Auto;}
- *
- * @font-face {
- *       font-family: 'basisfettkursivschrift';
- *       src: local('Arial Bold Italic'), local('Helvetica Bold Italic'),
- *       url('../font/Carlito-Italic.eot'),
- *       url('../font/Carlito-Italic.eot?#iefix') format('embedded-opentype'),
- *       url('../font/Carlito-Italic.woff2') format('woff2'),
- *       url('../font/Carlito-Italic.woff') format('woff'),
- *       url('../font/Carlito-Italic.ttf')  format('truetype');
- * }
- * ```
- */
+## Attribution
+
+- Auto-generated Css: Pan-Doc-Tool
+- How can I style code listings using CSS: https://stackoverflow.com/posts/48694906/revisions
+- W3-Schools: https://www.w3schools.com/css
+
+## Todos:
+
+### Disable Hover-on-Headings
+
+```
+A:Hover {
+     color: var(--Dings-Red-010);
+}
+```
+
+### Understand this ...
+
+```
+Html {
+  Background-Color: var(--Dings-Grey-900);
+  Color: var(--Dings-Grey-007);
+}
+
+#TOC Li {
+ List-Style: None;
+}
+#TOC Ul {
+ Padding-Left: 1.3em;
+}
+#TOC > Ul {
+ Padding-Left: 0;
+}
+#TOC a:not(:Hover) {
+ Text-Decoration: None;
+}
+
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: Auto; overflow-x: Auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+ width: 0.8em;
+ margin: 0 0.8em 0.2em -1.6em;
+ vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem Auto;}
+
+@font-face {
+      font-family: 'basisfettkursivschrift';
+      src: local('Arial Bold Italic'), local('Helvetica Bold Italic'),
+      url('../font/Carlito-Italic.eot'),
+      url('../font/Carlito-Italic.eot?#iefix') format('embedded-opentype'),
+      url('../font/Carlito-Italic.woff2') format('woff2'),
+      url('../font/Carlito-Italic.woff') format('woff'),
+      url('../font/Carlito-Italic.ttf')  format('truetype');
+}
+```
+*/
