@@ -23,10 +23,10 @@ Body {
 	Margin: 0 Auto;
 	Max-Width: 48em;
 	Overflow-Wrap: Break-Word;
-	Padding-Left: 50px;
-	Padding-Right: 50px;
-	Padding-Top: 50px;
-	Padding-Bottom: 50px;
+	Padding-Left: 10px;
+	Padding-Right: 10px;
+	Padding-Top: 10px;
+	Padding-Bottom: 10px;
 	Text-Rendering: OptimizeLegibility;
 }
 
