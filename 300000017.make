@@ -21,7 +21,6 @@ Generate_File_List := \
 	${Css_File_List} \
 
 all: ${Generate_File_List}
-	echo ${Generate_File_List}
 
 # ## Generation-Rules
 %.md: %.py
