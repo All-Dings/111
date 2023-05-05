@@ -15,6 +15,7 @@ Number_File_List += $(wildcard 1997080300/*.*)
 Number_File_List += $(wildcard 250000000/*.*)
 Number_File_List += $(wildcard 260010000/*.*)
 Number_File_List += $(wildcard 400000000/*.*)
+Number_File_List += $(wildcard ./*.*)
 
 ## Git_Sub_Module Number_Files without leading Directory
 
@@ -32,13 +33,12 @@ Soft_Link_List := \
 
 ## All_Rule
 
-All: $(Work_Dir) $(Number_File_List_Local) ${Soft_Link_List}
+all: $(Work_Dir) $(Number_File_List_Local) ${Soft_Link_List}
 
 ## Create Work-Dir
 
 $(Work_Dir):
 	if [ ! -d $(Work_Dir) ] ; then mkdir $(Work_Dir) ; fi
-	ln -f *.* $(Work_Dir)
 
 ${Work_Dir}/Dings_Lib.py: ${Work_Dir}/300010010.py
 	cd ${Work_Dir}; ln -s 300010010.py Dings_Lib.py
@@ -67,10 +67,12 @@ $(Work_Dir)/%: 260010000/%
 	ln -f $< $@
 $(Work_Dir)/%: 400000000/%
 	ln -f $< $@
+$(Work_Dir)/%: ./%
+	ln -f $< $@
 
 ## Clean_Rule
 
-Clean:
-	rm -f $(Number_File_List_Local)
+clean:
+	rm -f $(Number_File_List_Local) $(Soft_Link_List)
 
-.PHONY: All Clean
+.PHONY: all clean
