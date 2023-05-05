@@ -10,6 +10,8 @@ Html_File_List := $(subst .md,.html,$(Md_File_List)) index.html
 Html_File_List := $(addprefix ${Dings_Day}/, $(Html_File_List))
 
 Jpg_File_List := $(wildcard *.jpg)
+Jpg_File_List := $(filter-out 0.jpg,$(Jpg_File_List)) # LFS-Problem
+Jpg_File_List := $(filter-out 8.jpg,$(Jpg_File_List)) # LFS-Problem
 Jpg_File_List := $(addprefix ${Dings_Day}/, $(Jpg_File_List))
 
 define Markdown_to_Html
