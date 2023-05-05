@@ -1,56 +1,73 @@
 # All_Things_Makefile_File
 #
 
-ifndef Dings_Day
-$(error Error: Bash Variable "Dings_Day" not set)
-endif
+## Work-Dir
+Work_Dir := Work-Dir
 
-Md_File_List = $(wildcard *.md)
-Html_File_List := $(subst .md,.html,$(Md_File_List)) index.html
-Html_File_List := $(addprefix ${Dings_Day}/, $(Html_File_List))
+## Git_Sub_Module Number_Files
 
-Jpg_File_List := $(wildcard *.jpg)
-Jpg_File_List := $(filter-out 0.jpg,$(Jpg_File_List)) # LFS-Problem
-Jpg_File_List := $(filter-out 8.jpg,$(Jpg_File_List)) # LFS-Problem
-Jpg_File_List := $(addprefix ${Dings_Day}/, $(Jpg_File_List))
+Number_File_List += $(wildcard 0/*.*)
+Number_File_List += $(wildcard 888/*.*)
+Number_File_List += $(wildcard 2000001/*.*)
+Number_File_List += $(wildcard 1000001000/*.*)
+Number_File_List += $(wildcard 140100000/*.*)
+Number_File_List += $(wildcard 1997080300/*.*)
+Number_File_List += $(wildcard 250000000/*.*)
+Number_File_List += $(wildcard 260010000/*.*)
+Number_File_List += $(wildcard 400000000/*.*)
 
-define Markdown_to_Html
-	pandoc --standalone --template 300000002.htm $(1) -o $(2)
-	sed -i '' -E 's/(href="[0-9]+)\.md/\1\.html/g' $(2)
-	sed -i '' -E 's#<body>#<body><pre class="console"><code>Warning: Although I give my very Best, Mistakes are still possible.</code></pre>#g' $(2)
-endef
+## Git_Sub_Module Number_Files without leading Directory
 
-define Render_Jpg_File
-	magick convert $(1) -resize 800 -quality 80 $(2)
-endef
+Number_File_List_Local := $(notdir $(Number_File_List))
+Number_File_List_Local := $(filter-out README.md,$(Number_File_List_Local))
+Number_File_List_Local := $(filter-out Makefile,$(Number_File_List_Local))
+Number_File_List_Local := $(addprefix $(Work_Dir)/, $(Number_File_List_Local))
 
-all: Git_Sub_Module_Init Html_Files Jpg_Files
-	echo "All_Things_Make_File:${Dings_Day}"
+# Soft-Link List
 
-Html_Files: $(Dings_Day) $(Html_File_List) ${Dings_Day}/300000014.css
-Jpg_Files: $(Dings_Day) $(Jpg_File_List)
+Soft_Link_List := \
+	${Work_Dir}/Dings_Lib.py \
+	${Work_Dir}/Dockerfile
 
-Git_Sub_Module_Init:
-	git submodule update --init
+## All_Rule
 
-$(Dings_Day):
-	mkdir $(Dings_Day)
+All: $(Work_Dir) $(Number_File_List_Local) ${Soft_Link_List}
 
-## Web_Server_Directory_Index_Rule
+## Create Work-Dir
 
-${Dings_Day}/index.html: 300000006.md
-	$(call Markdown_to_Html, $<, $@)
+$(Work_Dir):
+	if [ ! -d $(Work_Dir) ] ; then mkdir $(Work_Dir) ; fi
+	ln -f *.* $(Work_Dir)
 
-${Dings_Day}/300000014.css: 300000014.css
-	cp $< $@
+${Work_Dir}/Dings_Lib.py: ${Work_Dir}/300010010.py
+	cd ${Work_Dir}; ln -s 300010010.py Dings_Lib.py
+${Work_Dir}/Dockerfile: ${Work_Dir}/18.dockerfile
+	cd ${Work_Dir}; ln -s 18.dockerfile Dockerfile
 
-${Dings_Day}/%.html: %.md 300000004.make 300000014.css 300000002.htm
-	$(call Markdown_to_Html, $<, $@)
+## Generate Hard-Links
 
-${Dings_Day}/%.jpg: %.jpg 300000004.make
-	$(call Render_Jpg_File, $<, $@)
+$(Work_Dir)/%: 0/%
+	ln -f $< $@
+$(Work_Dir)/%: 888/%
+	ln -f $< $@
+$(Work_Dir)/%: 2000001/%
+	ln -f $< $@
+$(Work_Dir)/%: 1000001000/%
+	ln -f $< $@
+$(Work_Dir)/%: 140100000/%
+	ln -f $< $@
+$(Work_Dir)/%: 1997080300/%
+	ln -f $< $@
+$(Work_Dir)/%: 250000000/%
+	ln -f $< $@
+$(Work_Dir)/%: 260010000/%
+	ln -f $< $@
+$(Work_Dir)/%: 400000000/%
+	ln -f $< $@
 
-clean:
-	rm -f $(Html_File_List) $(Jpg_File_List)
+## Clean_Rule
 
-.PHONY: all clean
+Clean:
+	rm -f $(Number_File_List_Local)
+
+.PHONY: All Clean
