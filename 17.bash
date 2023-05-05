@@ -59,8 +59,8 @@ function Generate_Dings()
 
 function Generate_Dings_Fast_And_Correct()
 {
-	local Dings_File="Work-Dir/17.md"
-	local Name_File="Work-Dir/0.txt"
+	local Dings_File="17.md"
+	local Name_File="0/0.txt"
 	local Link
 
 	echo > $Dings_File
