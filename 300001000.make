@@ -35,10 +35,18 @@ define Render_Jpg_File
 	magick convert $(1) -resize 800 -quality 80 $(2)
 endef
 
-all: Create_Hard_Links ${Dings_Day} ${Target_File_List}
+all:
+	$(info For rendering all Dings do the following:)
+	$(info )
+	$(info $$ export Dings_Day=Day-XX)
+	$(info $$ make workdir)
+	$(info $$ make render)
+	$(info )
 
-Create_Hard_Links:
+workdir:
 	make -f 300000004.make
+
+render: ${Dings_Day} ${Target_File_List}
 
 $(Dings_Day):
 	mkdir $(Dings_Day)
