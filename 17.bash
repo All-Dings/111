@@ -92,7 +92,7 @@ function Render
 		exit 1
 	fi
 	Update_Sub_Modules $Tag
-	make -f 300001000.make Create_Hard_Links
+	make -f 300001000.make workdir
 	Generate_Dings_Fast_And_Correct
 }
 
