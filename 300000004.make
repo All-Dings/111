@@ -43,7 +43,7 @@ $(Work_Dir):
 ${Work_Dir}/Dings_Lib.py: ${Work_Dir}/300010010.py
 	cd ${Work_Dir}; ln -s 300010010.py Dings_Lib.py
 ${Work_Dir}/dings: ${Work_Dir}/300020002.pl
-	cd ${Work_Dir}; printf "%s\n%s\n", '#!/bin/bash', 'python3 300020001.py $@' > dings; chmod a+x dings
+	cd ${Work_Dir}; printf "%s\n%s\n", '#!/bin/bash' 'python3 300020001.py $@' > dings; chmod a+x dings
 ${Work_Dir}/Dockerfile: ${Work_Dir}/18.dockerfile
 	cd ${Work_Dir}; ln -s 18.dockerfile Dockerfile
 
