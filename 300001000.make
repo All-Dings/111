@@ -26,7 +26,7 @@ Target_File_List := \
 	${Dings_Day}/300000014.css
 
 define Markdown_to_Html
-	pandoc --standalone --template ${Work_Dir}/300000002.htm $(1) -o $(2)
+	pandoc -f markdown-auto_identifiers --standalone --template ${Work_Dir}/300000002.htm $(1) -o $(2)
 	sed -i '' -E 's/(href="[0-9]+)\.md/\1\.html/g' $(2)
 	sed -i '' -E 's#<body>#<body><pre class="console"><code>Warning: Although I give my very Best, Mistakes are still possible.</code></pre>#g' $(2)
 endef
