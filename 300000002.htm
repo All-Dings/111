@@ -1,13 +1,136 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="300000014.css" type="text/css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="date" content='$date-meta$'>
-    <title>$title$</title>
-  </head>
-  <body>
-$body$
-  </body>
+	<head>
+		<link rel="stylesheet" href="300000014.css" type="text/css"/>
+		<!-- Fontawesome: https://fontawesome.com/search?m=free&o=r -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta name="date" content='$date-meta$'>
+		<title>$title$</title>
+	</head>
+
+	<script>
+/*
+ * Toggle between collapsed and open Top-Nav-Menu
+ */
+function Toggle_Top_Nav_Responsive() {
+	var Top_Nav = document.getElementById("Dings-Top-Nav");
+	if (Top_Nav.className === "Dings-Top-Nav") {
+		Top_Nav.className += " responsive";
+	} else {
+		Top_Nav.className = "Dings-Top-Nav";
+	}
+}
+
+/*
+ * Execute Stuff after loading Page
+ */
+function On_Load() {
+	console.log("Loading...");
+	Selected_Sidebar_Element = document.getElementById("First-Sidebar-Element");
+	Selected_Sidebar_Element.classList.add("active");
+	Side_Bar = document.getElementById('Dings-Side-Bar');
+	Side_Bar.scrollTop = Selected_Sidebar_Element.offsetTop;
+	// FIXME: This does not work for some Reason
+	// Content = document.getElementById('Dings-Content');
+	// Content.scrollTop = 0;
+}
+
+/*
+ * Callback for selecting the clicked Sidebar-Element
+ */
+function Select_Sidebar_Element(Event) {
+	let Target = Event.target;
+	/* Remove old Selection */
+	if (Selected_Sidebar_Element.classList.contains("active")) {
+		Selected_Sidebar_Element.classList.remove("active");
+	}
+	/* Set new Selection */
+	if (!Target.classList.contains("active")) {
+		Target.classList.add("active");
+		Side_Bar = document.getElementById('Dings-Side-Bar');
+	}
+	Selected_Sidebar_Element = Target;
+}
+
+/*
+
+// Disabled Experimental-Code: https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation
+// Use --section-divs Pandoc-Option
+
+var Selected_Sidebar_Element
+var Active_Elements = []
+
+function Scroll_Sidebar() {
+	const TOP_POS_MAX = 1000000000
+	let i = 0;
+	var Top_Pos = TOP_POS_MAX
+	while (i < Active_Elements.length) {
+		Nav_Element = Active_Elements[i]
+		console.log(" Pos: " + Nav_Element.offsetTop);
+		Top_Pos = Math.min(Nav_Element.offsetTop, Top_Pos);
+		i++
+	}
+	if (Top_Pos != TOP_POS_MAX) {
+		Side_Bar = document.getElementById('Dings-Side-Bar')
+		Side_Bar.scrollTop = Top_Pos;
+		console.log("Top-Pos: " + Top_Pos)
+	}
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+	console.log("Listener");
+	const observer = new IntersectionObserver(entries => {
+		console.log("------------------------------------")
+		entries.forEach(entry => {
+			const id = entry.target.getAttribute('id');
+			console.log(" ID: " + id);
+			Nav_Element = document.querySelector(`.Dings-Side-Bar a[href="#${id}"]`)
+			console.log(Nav_Element)
+			if (entry.intersectionRatio > 0) {
+				// Nav_Element..parentElement.classList.add('active');
+				// Nav_Element.classList.add('active');
+				console.log(" ADD!");
+				console.log(" Pos: " + Nav_Element.offsetTop)
+				Active_Elements.push(Nav_Element)
+			} else {
+				// Nav_Element.parentElement.classList.remove('active');
+				// Nav_Element.classList.remove('active');
+				console.log(" REMOVE!");
+				Active_Elements.pop(Nav_Element)
+			}
+		});
+		Scroll_Sidebar()
+	});
+
+	// Track all sections that have an `id` applied
+	document.querySelectorAll('section[id]').forEach((section) => {
+	// document.querySelectorAll('H2[id]').forEach((section) => {
+		console.log("Observer");
+		observer.observe(section);
+	});
+});
+*/
+</script>
+
+	<body onload = "On_Load();">
+
+	<div class="Dings-Top-Nav" id="Dings-Top-Nav">
+		<a href="index.html">
+			<i class="fa fa-home"></i>
+		</a>
+		<a href="23.html">About_Project</a>
+		<a href="21.html">About_Me</a>
+		<a href="17.html">All_Dings</a>
+		<a href="300000021.html" style="Float:Right">Under_Construction!</a>
+		<a href="javascript:void(0);" class="icon" onclick="Toggle_Top_Nav_Responsive()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	$Dings-Side-Bar$
+	<div class="Dings-Content" id="Dings-Content">
+	$body$
+	</div>
+	</body>
 </html>

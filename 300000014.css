@@ -2,17 +2,179 @@
 
 /* ## Define Variables */
 :Root {
-	--Dings-Red-010:  #f46d34;
-	--Dings-Blue-040: #506e9d;
-	--Dings-Grey-007: #191919;
-	--Dings-Grey-010: #444444;
-	--Dings-Gray-015: #616161;
-	--Dings-Grey-020: #a1a1a1;
-	--Dings-Grey-022: #d1d1d1;
-	--Dings-Grey-025: #e7e7e7;
-	--Dings-Grey-040: #f8f8f8;
-	--Dings-Grey-900: #fdfdfd;
-	--Dings-Yellow-900: #f2f2ea;
+	--Dings-Red-010:	#f46d34;
+	--Dings-Blue-040:	#506e9d;
+	--Dings-Grey-007:	#191919;
+	--Dings-Grey-010:	#444444;
+	--Dings-Gray-015:	#616161;
+	--Dings-Grey-020:	#a1a1a1;
+	--Dings-Grey-022:	#d1d1d1;
+	--Dings-Grey-025:	#e7e7e7;
+	--Dings-Grey-040:	#f8f8f8;
+	--Dings-Grey-900:	#fdfdfd;
+	--Dings-Yellow-900:	#f2f2ea;
+	--Dings-Content-Width:	800px;
+	--Dings-Side-Bar-Width:	200px;
+}
+
+/* ## Top Navigation Bar: https://www.w3schools.com/howto/howto_js_Dings-Top-Nav.asp */
+.Dings-Top-Nav {
+	Overflow: Hidden;
+	Background-color: var(--Dings-Grey-010);
+	Overflow: Hidden;
+	Position: Fixed;
+	Top: 0;
+	Box-Shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
+	Width: 100%;
+}
+
+.Dings-Top-Nav a {
+	Float: Left;
+	Display: Block;
+	Color: #f2f2f2;
+	Text-Align: Center;
+	Padding: 14px 16px;
+	Text-Decoration: None;
+	Font-Size: 17px;
+}
+
+.Dings-Top-Nav a:hover {
+	Background-Color: var(--Dings-Grey-022);
+	Color: Black;
+}
+
+.Dings-Top-Nav a.active {
+	Background-Color: var(--Dings-Red-010);
+	Color: White;
+}
+
+.Dings-Top-Nav .icon {
+	Display: None;
+}
+
+/* ## Responsive Side Bar: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp */
+.Dings-Side-Bar {
+	Margin: 0;
+	Padding: 0;
+	Width: var(--Dings-Side-Bar-Width);
+	Background-Color: #bbbbbb;
+	Margin-Top: 30px;
+	Position: fixed;
+	Height: 100%;
+	Overflow: auto;
+	Align-Self: start;
+}
+
+.Dings-Side-Bar a {
+	Transition: all 100ms ease-in-out;
+	Display: block;
+	Color: black;
+	Padding-right: 16px;
+	Padding-top: 4px;
+	Padding-bottom: 4px;
+	Text-Decoration: none;
+	Text-Align: Left;
+}
+
+.Dings-Side-Bar a.Heading_1 {
+	Padding-Left: 8px;
+	Font-Size: 17px;
+	Color: Black;
+}
+
+.Dings-Side-Bar a.Heading_2 {
+	Padding-Left: 14px;
+	Font-Size: 16px;
+	Color: black;
+}
+
+.Dings-Side-Bar a.Heading_3 {
+	Padding-Left: 16px;
+	Font-Size: 15px;
+	Color: #222;
+}
+
+.Dings-Side-Bar a.Heading_4 {
+	Padding-Left: 20px;
+	Font-Size: 14px;
+	Color: #333;
+}
+
+.Dings-Side-Bar a.Heading_5 {
+	Padding-Left: 24px;
+	Font-Size: 13px;
+	Color: #444;
+}
+
+.Dings-Side-Bar a.Heading_6 {
+	Padding-Left: 28px;
+	Font-Size: 12px;
+	Color: #555;
+}
+
+.Dings-Side-Bar a.active {
+	Background-Color: var(--Dings-Red-010);
+	Color: white;
+}
+
+.Dings-Side-Bar a:hover:not(.active) {
+	Background-Color: #555;
+	Color: white;
+}
+
+/* ## Scroll-Padding to ensure that Anchors are accessed right */
+/* See: https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html */
+html {
+	Scroll-Padding-Top: 6rem;
+}
+
+/* ## Content */
+div.Dings-Content {
+	Margin-Top: 30px;
+	Margin-Left: var(--Dings-Side-Bar-Width);
+	Padding-Top: 10px;
+	Padding-Bottom: 10px;
+	Padding-Left: 16px;
+	Padding-Right: 16px;
+	Height: 1000px;
+	Max-Width: var(--Dings-Content-Width);
+}
+
+/* ## Media-Queries */
+@media screen and (Max-Width: 600px) {
+	/* Dings-Top-Nav */
+	.Dings-Top-Nav a:not(:first-child) {
+		Display: None;
+	}
+	.Dings-Top-Nav a.icon {
+		Float: Right;
+		Display: Block;
+	}
+	.Dings-Top-Nav.responsive {
+		Position: Fixed;
+	}
+	.Dings-Top-Nav.responsive .icon {
+		Position: Absolute;
+		Right: 0;
+		Top: 0;
+	}
+	.Dings-Top-Nav.responsive a {
+		Float: None;
+		Display: Block;
+		Text-Align: Left;
+	}
+	/* Side-Bar */
+	.Dings-Side-Bar {
+		Display: None;
+	}
+	/* Content */
+	div.Dings-Content {
+		Margin-Left: 0;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 /* ## Document-Body */
@@ -20,23 +182,15 @@ Body {
 	Background-Color: var(--Dings-Yellow-900);
 	Hyphens: Auto;
 	Line-Height: 1.3;
-	Margin: 0 Auto;
-	Max-Width: 48em;
+	/* Margin: 0 Auto; */
 	Overflow-Wrap: Break-Word;
-	Padding-Left: 20px;
-	Padding-Right: 20px;
-	Padding-Top: 20px;
-	Padding-Bottom: 20px;
 	Text-Align: Justify;
 	Text-Rendering: OptimizeLegibility;
+	Margin-Left: 0px;
 }
 
 /* ## Links */
 A {
-	Color: var(--Dings-Grey-007);
-}
-
-A:Visited {
 	Color: var(--Dings-Grey-007);
 }
 
@@ -57,7 +211,7 @@ Header {
 /* ## Headings */
 H1, H2, H3, H4, H5, H6 {
 	Text-Align: Left;
-	Margin-Top: 1.4em;
+	Margin-Bottom: 0.5em;
 }
 
 H1 {
@@ -157,64 +311,3 @@ Th {
 Td {
 	Padding: 0.125em 0.5em 0.25em 0.5em;
 }
-
-/*
-## Attribution
-
-- Auto-generated Css: Pan-Doc-Tool
-- How can I style code listings using CSS: https://stackoverflow.com/posts/48694906/revisions
-- W3-Schools: https://www.w3schools.com/css
-
-## Todos:
-
-### Disable Hover-on-Headings
-
-```
-A:Hover {
-     color: var(--Dings-Red-010);
-}
-```
-
-### Understand this ...
-
-```
-Html {
-  Background-Color: var(--Dings-Grey-900);
-  Color: var(--Dings-Grey-007);
-}
-
-#TOC Li {
- List-Style: None;
-}
-#TOC Ul {
- Padding-Left: 1.3em;
-}
-#TOC > Ul {
- Padding-Left: 0;
-}
-#TOC a:not(:Hover) {
- Text-Decoration: None;
-}
-
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: Auto; overflow-x: Auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
- width: 0.8em;
- margin: 0 0.8em 0.2em -1.6em;
- vertical-align: middle;
-}
-.display.math{display: block; text-align: center; margin: 0.5rem Auto;}
-
-@font-face {
-      font-family: 'basisfettkursivschrift';
-      src: local('Arial Bold Italic'), local('Helvetica Bold Italic'),
-      url('../font/Carlito-Italic.eot'),
-      url('../font/Carlito-Italic.eot?#iefix') format('embedded-opentype'),
-      url('../font/Carlito-Italic.woff2') format('woff2'),
-      url('../font/Carlito-Italic.woff') format('woff'),
-      url('../font/Carlito-Italic.ttf')  format('truetype');
-}
-```
-*/
