@@ -65,10 +65,13 @@ window.onscroll = function() {
  */
 function Toggle_Top_Nav_Responsive() {
 	var Top_Nav = document.getElementById("Dings-Top-Nav");
+	var Under_Construction =  document.getElementById("Dings-Under-Construction")
 	if (Top_Nav.className === "Dings-Top-Nav") {
 		Top_Nav.className += " responsive";
+		Under_Construction.style.float = "None"
 	} else {
 		Top_Nav.className = "Dings-Top-Nav";
+		Under_Construction.style.float = "Right"
 	}
 }
 
@@ -202,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		<a href="23.html">About_Project</a>
 		<a href="21.html">About_Me</a>
 		<a href="17.html">All_Dings</a>
-		<a href="300000021.html" style="Float:Right">Under_Construction!</a>
+		<a href="300000021.html" id="Dings-Under-Construction" style="Float:Right">Under_Construction!</a>
 		<a href="javascript:void(0);" class="icon" onclick="Toggle_Top_Nav_Responsive()">
 			<i class="fa fa-bars"></i>
 		</a>
