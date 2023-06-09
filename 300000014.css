@@ -176,7 +176,7 @@ div.Dings-Content-With-Side-Bar {
 		Right: 0;
 		Top: 0;
 	}
-	.Dings-Top-Nav.responsive aa:not(.Dings-Toggle-Side-Bar) {
+	.Dings-Top-Nav.responsive a:not(.Dings-Toggle-Side-Bar) {
 		Float: None;
 		Display: Block;
 		Text-Align: Left;
