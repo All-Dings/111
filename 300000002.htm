@@ -76,7 +76,7 @@ function Toggle_Top_Nav_Responsive() {
  * Toggle between collapsed and open Top-Nav-Menu
  */
 function Toggle_Side_Bar() {
-	Button = document.getElementById("Dings-Toogle-Side-Bar");
+	Button = document.getElementById("Dings-Toggle-Side-Bar");
 	Icon = Button.getElementsByTagName("i")[0];
 	Icon.classList.toggle("fa-minus");
 	var Dings_Content = document.getElementById("Dings-Content");
@@ -196,7 +196,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		<a href="index.html">
 			<i class="fa fa-home"></i>
 		</a>
-		<a href="javascript:void(0);" id="Dings-Toogle-Side-Bar" onclick="Toggle_Side_Bar()">
+		<a href="javascript:void(0);" class="Dings-Toggle-Side-Bar" id="Dings-Toggle-Side-Bar" onclick="Toggle_Side_Bar()">
 			<i class="fa fa-plus"></i>
 		</a>
 		<a href="23.html">About_Project</a>
