@@ -119,7 +119,7 @@
 }
 
 .Dings-Side-Bar a.active {
-	Background-Color: var(--Dings-Red-010);
+	Background-Color: var(--Dings-Grey-010);
 	Color: white;
 }
 
