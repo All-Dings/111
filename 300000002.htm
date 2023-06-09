@@ -24,6 +24,24 @@ function Toggle_Top_Nav_Responsive() {
 }
 
 /*
+ * Toggle between collapsed and open Top-Nav-Menu
+ */
+function Toggle_Side_Bar(Anchor) {
+	Icon = Anchor.getElementsByTagName("i")[0];
+	Icon.classList.toggle("fa-minus");
+	var Dings_Content = document.getElementById("Dings-Content");
+	var Dings_Side_Bar = document.getElementById("Dings-Side-Bar");
+
+	if (Dings_Content.className === "Dings-Content-With-Side-Bar") {
+		Dings_Content.className = "Dings-Content";
+		Dings_Side_Bar.className = "Dings-Side-Bar-Hidden";
+	} else {
+		Dings_Content.className = "Dings-Content-With-Side-Bar";
+		Dings_Side_Bar.className = "Dings-Side-Bar";
+	}
+}
+
+/*
  * Execute Stuff after loading Page
  */
 function On_Load() {
@@ -119,6 +137,9 @@ window.addEventListener('DOMContentLoaded', () => {
 	<div class="Dings-Top-Nav" id="Dings-Top-Nav">
 		<a href="index.html">
 			<i class="fa fa-home"></i>
+		</a>
+		<a href="javascript:void(0);" onclick="Toggle_Side_Bar(this)">
+			<i class="fa fa-plus"></i>
 		</a>
 		<a href="23.html">About_Project</a>
 		<a href="21.html">About_Me</a>

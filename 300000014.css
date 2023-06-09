@@ -12,7 +12,8 @@
 	--Dings-Grey-025:	#e7e7e7;
 	--Dings-Grey-040:	#f8f8f8;
 	--Dings-Grey-900:	#fdfdfd;
-	--Dings-Yellow-900:	#f2f2ea;
+	--Dings-Yellow-900:	#f0f0e3;
+	--Dings-Yellow-800:	#f2f2ea;
 	--Dings-Content-Width:	800px;
 	--Dings-Side-Bar-Width:	200px;
 }
@@ -21,7 +22,6 @@
 .Dings-Top-Nav {
 	Overflow: Hidden;
 	Background-color: var(--Dings-Grey-010);
-	Overflow: Hidden;
 	Position: Fixed;
 	Top: 0;
 	Box-Shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
@@ -53,6 +53,10 @@
 }
 
 /* ## Responsive Side Bar: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp */
+.Dings-Side-Bar-Hidden {
+	Display: None;
+}
+
 .Dings-Side-Bar {
 	Margin: 0;
 	Padding: 0;
@@ -131,12 +135,24 @@ html {
 /* ## Content */
 div.Dings-Content {
 	Margin-Top: 30px;
+	Margin-Left: auto;
+	Margin-Right: auto;
+	Padding-Top: 10px;
+	Padding-Bottom: 10px;
+	Padding-Left: 16px;
+	Padding-Right: 16px;
+	Background-Color: var(--Dings-Yellow-800);
+	Max-Width: var(--Dings-Content-Width);
+}
+
+/* ## Content with Side-Bar */
+div.Dings-Content-With-Side-Bar {
+	Margin-Top: 30px;
 	Margin-Left: var(--Dings-Side-Bar-Width);
 	Padding-Top: 10px;
 	Padding-Bottom: 10px;
 	Padding-Left: 16px;
 	Padding-Right: 16px;
-	Height: 1000px;
 	Max-Width: var(--Dings-Content-Width);
 }
 
@@ -169,6 +185,9 @@ div.Dings-Content {
 	}
 	/* Content */
 	div.Dings-Content {
+		Margin-Left: 0;
+	}
+	div.Dings-Content-With-Side-Bar {
 		Margin-Left: 0;
 	}
 }
