@@ -1,5 +1,4 @@
 /* # My-Dings-Css-File */
-
 /* ## Define Variables */
 :Root {
 	--Dings-Red-010:	#f46d34;
@@ -18,7 +17,8 @@
 	--Dings-Side-Bar-Width:	200px;
 }
 
-/* ## Top Navigation Bar: https://www.w3schools.com/howto/howto_js_Dings-Top-Nav.asp */
+/* ## Top Navigation Bar */
+/* ##### Link: https://www.w3schools.com/howto/howto_js_Dings-Top-Nav.asp */
 .Dings-Top-Nav {
 	Overflow: Hidden;
 	Background-color: var(--Dings-Grey-010);
@@ -53,7 +53,8 @@
 	Display: None;
 }
 
-/* ## Responsive Side Bar: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp */
+/* ## Responsive Side Bar */
+/* ##### Link: https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp */
 .Dings-Side-Bar-Hide {
 	Display: None;
 }
@@ -129,12 +130,13 @@
 }
 
 /* ## Scroll-Padding to ensure that Anchors are accessed right */
-/* See: https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html */
+/* ##### Link: https://getpublii.com/blog/one-line-css-solution-to-prevent-anchor-links-from-scrolling-behind-a-sticky-header.html */
 html {
 	Scroll-Padding-Top: 6rem;
 }
 
 /* ## Content */
+/* ### Content without Side-Bar */
 div.Dings-Content {
 	Margin-Top: 30px;
 	Margin-Left: auto;
@@ -147,7 +149,7 @@ div.Dings-Content {
 	Max-Width: var(--Dings-Content-Width);
 }
 
-/* ## Content with Side-Bar */
+/* ### Content with Side-Bar */
 div.Dings-Content-With-Side-Bar {
 	Margin-Top: 30px;
 	Margin-Left: var(--Dings-Side-Bar-Width);
@@ -158,7 +160,7 @@ div.Dings-Content-With-Side-Bar {
 	Max-Width: var(--Dings-Content-Width);
 }
 
-/* ## Media-Queries */
+/* ## Media-Queries for smaller Screens */
 @media screen and (Max-Width: 600px) {
 	/* Dings-Top-Nav */
 	.Dings-Top-Nav a:not(:first-child) {
@@ -194,11 +196,13 @@ div.Dings-Content-With-Side-Bar {
 	}
 }
 
+/* ## Definitions for Content */
+/* ### Scrolling */
 html {
 	scroll-behavior: smooth;
 }
 
-/* ## Document-Body */
+/* ### Document-Body */
 Body {
 	Background-Color: var(--Dings-Yellow-900);
 	Hyphens: Auto;
@@ -210,12 +214,12 @@ Body {
 	Margin-Left: 0px;
 }
 
-/* ## Links */
+/* ### Links */
 A {
 	Color: var(--Dings-Grey-007);
 }
 
-/* ## Blockquote */
+/* ### Blockquote */
 Blockquote {
 	Border-Left: 2px solid var(--Dings-Grey-025);
 	Color: var(--Dings-Gray-015);
@@ -223,13 +227,14 @@ Blockquote {
 	Padding-Left: 1em;
 }
 
-/* ## Header */
+/* ### Header */
 Header {
 	Margin-Bottom: 4em;
 	Text-Align: Center;
 }
 
-/* ## Headings */
+/* ### Headings */
+/* #### General Settings */
 H1, H2, H3, H4, H5, H6 {
 	Text-Align: Left;
 	Margin-Bottom: 0.5em;
@@ -252,14 +257,14 @@ H5, H6 {
 	Font-Style: italic;
 }
 
-/* H6 is used for Dings-Topics: */
+/* #### H6 is used for Dings-Topics: */
 H6 {
 	Font-Weight: Normal;
 	Margin-Top:-7px;
 	Margin-Bottom:-3px;
 }
 
-/* ## Horizontal-Ruler */
+/* ### Horizontal-Ruler */
 Hr {
 	Background-Color: var(--Dings-Grey-007);
 	Border: None;
@@ -267,12 +272,12 @@ Hr {
 	Margin: 1em 0;
 }
 
-/* ## Image */
+/* ### Image */
 Img {
 	Max-Width: 100%;
 }
 
-/* ## Ordered-Lists and Unordered-Lists */
+/* ### Ordered-Lists and Unordered-Lists */
 Ol, Ul {
 	List-Style-Type: Circle;
 	Margin-Top: 1em;
@@ -280,12 +285,12 @@ Ol, Ul {
 	Text-Align: Left;
 }
 
-/* ## New Paragraph */
+/* ### New Paragraph */
 P {
 	Margin: 1em 0;
 }
 
-/* ## Pre-Format and Code */
+/* ### Pre-Format and Code */
 Pre {
 	Background-Color: var(--Dings-Grey-040);
 	Border: 1px Solid var(--Dings-Grey-022);
@@ -304,7 +309,7 @@ Pre {
 Code {
 }
 
-/* ## Table */
+/* ### Table */
 Table {
 	Display: Block;
 	Border-Collapse: Collapse;
