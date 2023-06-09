@@ -18,12 +18,12 @@ var Previous_Scroll_Position = window.pageYOffset;
 
 window.onscroll = function() {
 	var Current_Scroll_Position = window.pageYOffset;
-	if (Previous_Scroll_Position > Current_Scroll_Position) {
-		/* Down */
+	if (Current_Scroll_Position < 50 || Previous_Scroll_Position > Current_Scroll_Position) {
+		/* Show Top-Nav */
 		document.getElementById("Dings-Top-Nav").style.top = "0";
 		document.getElementById("Dings-Side-Bar").style.marginTop = "30px";
 	} else {
-		/* Up */
+		/* Hide Top-Nav */
 		document.getElementById("Dings-Top-Nav").style.top = "-50px";
 		document.getElementById("Dings-Side-Bar").style.marginTop = "-28px";
 	}
