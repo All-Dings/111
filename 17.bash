@@ -76,7 +76,7 @@ function Generate_Dings_Fast_And_Correct()
 			echo $Line >> $Dings_File
 			echo >> $Dings_File
 		else
-			Link=$(echo $Line | sed -E 's#([0-9]+)\.(md|jpg|mp3|py|bash|html|make|pl|css)[ ]+(.*)#[\3](\1.\2)#g')
+			Link=$(echo $Line | sed -E 's#([0-9]+)\.(md|jpg|ico|mp3|py|bash|html|make|pl|css)[ ]+(.*)#[\3](\1.\2)#g')
 			echo "- $Link" >> $Dings_File
 		fi
 	done
