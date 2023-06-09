@@ -12,6 +12,25 @@
 
 	<script>
 /*
+ * When the User scrolls down, hide the Top-Nave, on Scroll-Up show it again.
+ */
+var Previous_Scroll_Position = window.pageYOffset;
+
+window.onscroll = function() {
+	var Current_Scroll_Position = window.pageYOffset;
+	if (Previous_Scroll_Position > Current_Scroll_Position) {
+		/* Down */
+		document.getElementById("Dings-Top-Nav").style.top = "0";
+		document.getElementById("Dings-Side-Bar").style.marginTop = "30px";
+	} else {
+		/* Up */
+		document.getElementById("Dings-Top-Nav").style.top = "-50px";
+		document.getElementById("Dings-Side-Bar").style.marginTop = "-28px";
+	}
+	Previous_Scroll_Position = Current_Scroll_Position;
+}
+
+/*
  * Toggle between collapsed and open Top-Nav-Menu
  */
 function Toggle_Top_Nav_Responsive() {

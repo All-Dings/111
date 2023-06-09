@@ -24,6 +24,7 @@
 	Background-color: var(--Dings-Grey-010);
 	Position: Fixed;
 	Top: 0;
+	Transition: Top 0.3s;
 	Box-Shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
 	Width: 100%;
 }
@@ -60,6 +61,7 @@
 .Dings-Side-Bar {
 	Margin: 0;
 	Padding: 0;
+	Transition: Margin-Top 0.3s;
 	Width: var(--Dings-Side-Bar-Width);
 	Background-Color: #bbbbbb;
 	Margin-Top: 30px;
