@@ -23,6 +23,7 @@ Target_File_List := \
 	${Html_File_List} \
 	${Jpg_File_List} \
 	${Dings_Day}/index.html \
+	${Dings_Day}/favicon.ico \
 	${Dings_Day}/300000014.css
 
 define Markdown_to_Html
@@ -55,6 +56,11 @@ $(Dings_Day):
 
 ${Dings_Day}/index.html: ${Work_Dir}/300000006.md
 	$(call Markdown_to_Html, $<, $@)
+
+## Favicon
+
+${Dings_Day}/favicon.ico: ${Work_Dir}/300030005.ico
+	cp $< $@
 
 # CSS-File
 
