@@ -102,6 +102,8 @@ function On_Load() {
 	// Content.scrollTop = 0;
 }
 
+var Last_Selected_Side_Bar_Secs = new Date().getTime() / 1000;
+
 /*
  * Callback for selecting the clicked Sidebar-Element
  */
@@ -117,6 +119,7 @@ function Select_Sidebar_Element(Event) {
 		Side_Bar = document.getElementById('Dings-Side-Bar');
 	}
 	Selected_Sidebar_Element = Target;
+	Last_Selected_Side_Bar_Secs = new Date().getTime() / 1000;
 }
 
 // Disabled Experimental-Code: https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation
@@ -130,10 +133,16 @@ function Scroll_Sidebar() {
 	let Min_Level = 10;
 	let Top_Element = null;
 	var Scroll_Direction;
+
+	Time_Secs = new Date().getTime() / 1000;
+	if (Time_Secs - Last_Selected_Side_Bar_Secs <= 1) {
+		return;
+	}
 	if (Previous_Scroll_Position < window.pageYOffset) {
 		Scroll_Direction = "Scroll_Up";
-	else
+	} else {
 		Scroll_Direction = "Scroll_Down";
+	}
 	Previous_Scroll_Position = window.pageYOffset;
 	while (i < Active_Elements.length) {
 		Nav_Element = Active_Elements[i];
@@ -143,7 +152,13 @@ function Scroll_Sidebar() {
 		// ClassName = "Heading_X"
 		Nav_Element_Level = Number(Nav_Element.className.substring(8, 9));
 		console.log("XLevel: " + Nav_Element_Level);
-		if ((Nav_Element_Level == 2) && (Nav_Element.offsetTop <= Top_Element.offset_Top)) {
+		if ((Scroll_Direction == "Scroll_Up") && (Nav_Element.offsetTop <= Top_Element.offset_Top)) {
+			console.log(" Pos: " + Nav_Element.offsetTop);
+			console.log(" Level: " + Nav_Element_Level);
+			Top_Element = Nav_Element;
+			Min_Level = Nav_Element_Level;
+		}
+		if ((Scroll_Direction == "Scroll_Down") && (Nav_Element.offsetTop >= Top_Element.offset_Top)) {
 			console.log(" Pos: " + Nav_Element.offsetTop);
 			console.log(" Level: " + Nav_Element_Level);
 			Top_Element = Nav_Element;
@@ -185,8 +200,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Track all sections that have an `id` applied
-	document.querySelectorAll('section[id]').forEach((section) => {
-	// document.querySelectorAll('H2[id]').forEach((section) => {
+	// document.querySelectorAll('section[id]').forEach((section) => {
+	document.querySelectorAll('H2[id]').forEach((section) => {
 		console.log("Observer");
 		observer.observe(section);
 	});
