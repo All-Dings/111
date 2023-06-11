@@ -24,7 +24,8 @@ Target_File_List := \
 	${Jpg_File_List} \
 	${Dings_Day}/index.html \
 	${Dings_Day}/favicon.ico \
-	${Dings_Day}/300000014.css
+	${Dings_Day}/300000014.css \
+	${Dings_Day}/300030006.js
 
 define Markdown_to_Html
 	# pandoc -f markdown-auto_identifiers --standalone --template ${Work_Dir}/300000002.htm $(1) -o $(2)
@@ -65,6 +66,11 @@ ${Dings_Day}/favicon.ico: ${Work_Dir}/300030005.ico
 # CSS-File
 
 ${Dings_Day}/300000014.css: ${Work_Dir}/300000014.css
+	cp $< $@
+
+# Dings-Java-Script-File
+
+${Dings_Day}/300030006.js: ${Work_Dir}/300030006.js
 	cp $< $@
 
 ${Dings_Day}/%.html: ${Work_Dir}/%.md
