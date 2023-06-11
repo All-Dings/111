@@ -122,6 +122,7 @@ function Select_Sidebar_Element(Event) {
 	Last_Selected_Side_Bar_Secs = new Date().getTime() / 1000;
 }
 
+/*
 // Disabled Experimental-Code: https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation
 // Use --section-divs Pandoc-Option
 
@@ -196,3 +197,4 @@ window.addEventListener('DOMContentLoaded', () => {
 		observer.observe(section);
 	});
 });
+*/
