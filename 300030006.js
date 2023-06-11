@@ -132,48 +132,37 @@ function Scroll_Sidebar() {
 	let i = 0;
 	let Min_Level = 10;
 	let Top_Element = null;
-	var Scroll_Direction;
 
 	Time_Secs = new Date().getTime() / 1000;
 	if (Time_Secs - Last_Selected_Side_Bar_Secs <= 1) {
 		return;
 	}
-	if (Previous_Scroll_Position < window.pageYOffset) {
-		Scroll_Direction = "Scroll_Up";
-	} else {
-		Scroll_Direction = "Scroll_Down";
-	}
-	Previous_Scroll_Position = window.pageYOffset;
+	Prev_Side_Bar_Scroll_Position = window.pageYOffset;
+	console.log(" List-Len: " + Active_Elements.length);
 	while (i < Active_Elements.length) {
+		console.log("  Element: " + i);
 		Nav_Element = Active_Elements[i];
 		if (Top_Element == null) {
 			Top_Element = Nav_Element;
 		}
 		// ClassName = "Heading_X"
 		Nav_Element_Level = Number(Nav_Element.className.substring(8, 9));
-		console.log("XLevel: " + Nav_Element_Level);
-		if ((Scroll_Direction == "Scroll_Up") && (Nav_Element.offsetTop <= Top_Element.offset_Top)) {
-			console.log(" Pos: " + Nav_Element.offsetTop);
-			console.log(" Level: " + Nav_Element_Level);
-			Top_Element = Nav_Element;
-			Min_Level = Nav_Element_Level;
-		}
-		if ((Scroll_Direction == "Scroll_Down") && (Nav_Element.offsetTop >= Top_Element.offset_Top)) {
-			console.log(" Pos: " + Nav_Element.offsetTop);
-			console.log(" Level: " + Nav_Element_Level);
+		if (Top_Element.offsetTop <= Nav_Element.offsetTop) {
+			console.log(" Up Pos: " + Nav_Element.offsetTop);
 			Top_Element = Nav_Element;
 			Min_Level = Nav_Element_Level;
 		}
 		i++
 	}
-	if (Top_Element != Selected_Sidebar_Element) {
-		Side_Bar = document.getElementById('Dings-Side-Bar')
-		Side_Bar.scrollTop = Top_Element.offsetTop;
-		console.log("New Top-Pos: " + Top_Element.offsetTop)
-		Selected_Sidebar_Element.classList.remove('active');
-		Selected_Sidebar_Element = Top_Element;
-		Selected_Sidebar_Element.classList.add('active');
+	if (!Top_Element) {
+		return;
 	}
+	console.log(" Top-Elem : " + Top_Element.offsetTop);
+	console.log(" Top-Bar  : " + Side_Bar.scrollTop);
+	console.log(" Top-Bar H: " + Side_Bar.offsetHeight);
+	Side_Bar = document.getElementById('Dings-Side-Bar')
+	Side_Bar.scrollTop = Top_Element.offsetTop - Side_Bar.offsetHeight / 2;
+	Selected_Sidebar_Element = Top_Element;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -184,24 +173,25 @@ window.addEventListener('DOMContentLoaded', () => {
 			const id = entry.target.getAttribute('id');
 			console.log(" ID: " + id);
 			Nav_Element = document.querySelector(`.Dings-Side-Bar a[href="#${id}"]`)
-			console.log(Nav_Element)
 			if (entry.intersectionRatio > 0) {
 				// Nav_Element..parentElement.classList.add('active');
 				console.log(" ADD!");
 				console.log(" Pos: " + Nav_Element.offsetTop)
 				Active_Elements.push(Nav_Element)
+				Nav_Element.classList.add('active');
 			} else {
 				// Nav_Element.parentElement.classList.remove('active');
 				console.log(" REMOVE!");
 				Active_Elements.pop(Nav_Element)
+				Nav_Element.classList.remove('active');
 			}
 		});
 		Scroll_Sidebar()
 	});
 
 	// Track all sections that have an `id` applied
-	// document.querySelectorAll('section[id]').forEach((section) => {
-	document.querySelectorAll('H2[id]').forEach((section) => {
+	document.querySelectorAll('section[id]').forEach((section) => {
+	// document.querySelectorAll('H2[id]').forEach((section) => {
 		console.log("Observer");
 		observer.observe(section);
 	});
