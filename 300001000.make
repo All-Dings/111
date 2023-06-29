@@ -23,10 +23,15 @@ Mp3_File_List  := $(wildcard ${Work_Dir}/*.mp3)
 Mp3_File_List  := $(notdir $(Mp3_File_List))
 Mp3_File_List  := $(addprefix ${Dings_Day}/, $(Mp3_File_List))
 
+Mp4_File_List  := $(wildcard ${Work_Dir}/*.mp4)
+Mp4_File_List  := $(notdir $(Mp4_File_List))
+Mp4_File_List  := $(addprefix ${Dings_Day}/, $(Mp4_File_List))
+
 Target_File_List := \
 	${Html_File_List} \
 	${Jpg_File_List} \
 	${Mp3_File_List} \
+	${Mp4_File_List} \
 	${Dings_Day}/index.html \
 	${Dings_Day}/favicon.ico \
 	${Dings_Day}/300000014.css \
@@ -85,6 +90,9 @@ ${Dings_Day}/%.jpg: ${Work_Dir}/%.jpg
 	$(call Render_Jpg_File, $<, $@)
 
 ${Dings_Day}/%.mp3: ${Work_Dir}/%.mp3
+	cp $< $@
+
+${Dings_Day}/%.mp4: ${Work_Dir}/%.mp4
 	cp $< $@
 
 clean:
