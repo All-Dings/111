@@ -228,6 +228,31 @@ Blockquote {
 	Padding-Left: 1em;
 }
 
+/* ### FigCaption Link */
+FigCaption a {
+	Color: var(--Dings-Gray-007);
+}
+
+/* ### FigCaption */
+FigCaption {
+	Font-Style: italic;
+	Border: 0;
+	Margin: 0;
+	Padding: 0;
+	Text-Align: Center;
+}
+
+/* ### Figure */
+Figure {
+	Border: 0;
+	Margin: 0;
+	Padding-Left: 0;
+	Padding-Right: 0;
+	Padding-Top: 0;
+	Padding-Bottom: 0.5em;
+	Background-Color: var(--Dings-Grey-025);
+}
+
 /* ### Header */
 Header {
 	Margin-Bottom: 4em;
