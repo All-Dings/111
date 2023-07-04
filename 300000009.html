@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="300000014.css" type="text/css"/>
+		<!-- Fontawesome: https://fontawesome.com/search?m=free&o=r -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta name="date" content=''>
+		<title>Dings-Workflow</title>
+	</head>
+
+	<script src="300030006.js"></script>
+
+	<body onload = "On_Load();">
+
+	<div class="Dings-Top-Nav" id="Dings-Top-Nav">
+		<a href="index.html">
+			<i class="fa fa-home"></i>
+		</a>
+		<a href="javascript:void(0);" class="Dings-Toggle-Side-Bar" id="Dings-Toggle-Side-Bar" onclick="Toggle_Side_Bar()">
+			<i class="fa fa-plus"></i>
+		</a>
+		<a href="23.html">About_Project</a>
+		<a href="21.html">About_Me</a>
+		<a href="17.html">All_Dings</a>
+		<a href="300000021.html" id="Dings-Under-Construction" style="Float:Right">Under_Construction!</a>
+		<a href="javascript:void(0);" class="icon" onclick="Toggle_Top_Nav_Responsive()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<div class="Dings-Side-Bar-Hide" id="Dings-Side-Bar">
+		<a id="First-Sidebar-Element" href="#1000" class="Heading_3" onclick="Select_Sidebar_Element(event)">Render-Day-X</a>
+		<a href="#1002" class="Heading_4" onclick="Select_Sidebar_Element(event)">Day-14</a>
+		<a href="#1001" class="Heading_4" onclick="Select_Sidebar_Element(event)">Before-Day-14</a>
+		<a href="#1100" class="Heading_3" onclick="Select_Sidebar_Element(event)">Dead-Dings-Files</a>
+	</div>
+	<div class="Dings-Content" id="Dings-Content">
+	<h1>Dings-Workflow</h1>
+<p>An Dings-Workflow is a <a href="120000002.html">Work-Flow</a> for the
+<a href="300000006.html">Dings-Project</a>.</p>
+<h2>Table-Of-Contents</h2>
+<ul>
+<li><a href="#1000">Render-Day-X</a></li>
+<li><a href="#1100">Dead-Dings-Files</a></li>
+</ul>
+<h2 id="1000">Render-Day-X</h2>
+<h3 id="1002">Day-14</h3>
+<p>Use the following Work-Flow to render the Day-24 using the <a
+href="9000142.html">Bash-Shell</a>:</p>
+<h4>Define the Day</h4>
+<pre class="console"><code>$ export Day-X=&quot;Day-24&quot;</code></pre>
+<pre><code>✔ ~ </code></pre>
+<h4>Check-Out Rendering-Repository</h4>
+<pre class="console"><code>$ git clone git@github.com:All-Dings/111.git</code></pre>
+<pre><code>Cloning into &#39;111&#39;...
+remote: Enumerating objects: 1836, done.
+remote: Counting objects: 100% (836/836), done.
+remote: Compressing objects: 100% (77/77), done.
+remote: Total 1836 (delta 769), reused 776 (delta 758), pack-reused 1000
+Receiving objects: 100% (1836/1836), 4.25 MiB | 5.93 MiB/s, done.
+Resolving deltas: 100% (918/918), done.</code></pre>
+<h4>Change into the Rendering-Directory</h4>
+<pre class="console"><code>$ cd 111</code></pre>
+<pre><code>✔ ~/111 [Master|✔]</code></pre>
+<h4>Initialize Git-Sub-Modules</h4>
+<pre class="console"><code>✔ ~/111 [Master|✔] $ git submodule update --init --recursive </code></pre>
+<pre><code>Submodule &#39;0&#39; (git@github.com:All-Dings/0.git) registered for path &#39;0&#39;
+Submodule &#39;1000001000&#39; (git@github.com:All-Dings/1000001000.git) registered for path &#39;1000001000&#39;
+Submodule &#39;140100000&#39; (git@github.com:All-Dings/140100000.git) registered for path &#39;140100000&#39;
+Submodule &#39;1997080300&#39; (git@github.com:All-Dings/1997080300.git) registered for path &#39;1997080300&#39;
+Submodule &#39;2000001&#39; (git@github.com:All-Dings/2000001.git) registered for path &#39;2000001&#39;
+Submodule &#39;250000000&#39; (git@github.com:All-Dings/250000000.git) registered for path &#39;250000000&#39;
+Submodule &#39;260010000&#39; (git@github.com:All-Dings/260010000.git) registered for path &#39;260010000&#39;
+Submodule &#39;888&#39; (git@github.com:All-Dings/888.git) registered for path &#39;888&#39;
+Cloning into &#39;/Users/michael-holzheu/111/0&#39;...
+Cloning into &#39;/Users/michael-holzheu/111/1000001000&#39;...
+Cloning into &#39;/Users/michael-holzheu/111/140100000&#39;...
+Cloning into &#39;/Users/michael-holzheu/111/1997080300&#39;...
+Cloning into &#39;/Users/michael-holzheu/111/2000001&#39;...
+Cloning into &#39;/Users/michael-holzheu/111/250000000&#39;...
+Cloning into &#39;/Users/michael-holzheu/111/260010000&#39;...
+Cloning into &#39;/Users/michael-holzheu/111/888&#39;...
+Submodule path &#39;0&#39;: checked out &#39;4cb8a12de63905a67b54cc39e6487ecdb9114bab&#39;
+Submodule path &#39;1000001000&#39;: checked out &#39;b1975a614c26c2fec7af3ed4761b78ead334ffd4&#39;
+Submodule path &#39;140100000&#39;: checked out &#39;69843c9ad560d4ba825949bc085baf7ab146c89f&#39;
+Submodule path &#39;1997080300&#39;: checked out &#39;225dcda35e561abd4fcbabfa51abcc4ab9a4a0df&#39;
+Submodule path &#39;2000001&#39;: checked out &#39;6e5b601ce0766bca410269ac8c607cec571d7947&#39;
+Submodule path &#39;250000000&#39;: checked out &#39;74876a4c5ddf982efff47758da8ebfae3ac965a0&#39;
+Submodule path &#39;260010000&#39;: checked out &#39;a5bf2e44fd7785f0aa4dc64bd3e8daa815422e88&#39;
+Submodule path &#39;888&#39;: checked out &#39;32c9fe7f866f04d9f90ad6ec8a1cfe824ebceaa5&#39;</code></pre>
+<h4>Checkout the Day-X-Tag</h4>
+<pre class="console"><code>✔ ~/111 [Master|✔] git checkout $Day-X</code></pre>
+<pre><code>Note: switching to &#39;Day-24&#39;.
+
+You are in &#39;detached HEAD&#39; state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c &lt;new-branch-name&gt;
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 5e1612f Update Sub-Modules</code></pre>
+<pre class="console"><code>✔ ~/111 [Master|✔] git submodule foreach &quot;git checkout $Day-x&quot;</code></pre>
+<pre><code>Entering &#39;0&#39;
+Previous HEAD position was e9c7bbe Finish Day-23
+HEAD is now at 6e42835 Finish Day-24
+Entering &#39;1000001000&#39;
+HEAD is now at b1975a6 Make README.md a Soft-Link to 1000001000.md
+Entering &#39;140100000&#39;
+HEAD is now at 69843c9 Make README.md a Soft-Link to 140100000.md
+Entering &#39;1997080300&#39;
+HEAD is now at 225dcda Make README.md a Soft-Link to 1997080300.md
+Entering &#39;250000000&#39;
+HEAD is now at 74876a4  Make README.md a Soft-Link to 250000000.md
+Entering &#39;260010000&#39;
+HEAD is now at a5bf2e4 Make README.md a Soft-Link to 260010000.md
+Entering &#39;888&#39;
+HEAD is now at 32c9fe7 Make README.md a Soft-Link to 888.md</code></pre>
+<h4>Build Html-Pages</h4>
+<h4>Since Day-42</h4>
+<pre class="console"><code>✔ ~/111 [Day-42|✔] make
+For rendering all Dings do the following:
+
+$ export Dings_Day=Day-XX
+$ make workdir
+$ make render</code></pre>
+<pre class="console"><code>✔ ~/111 [Day-42|✔] make workdir
+✔ ~/111 [Day-42|✔] make render</code></pre>
+<h4>Before Day-42</h4>
+<pre class="console"><code>✔ ~/111 [Day-24|✔] $ make -f 300001000.make</code></pre>
+<pre><code>ln -f 0/0.jpg 0.jpg
+ln -f 0/0.md 0.md
+
+[...]
+
+sed -i &#39;&#39; -E &#39;s/(href=&quot;[0-9]+)\.md/\1\.html/g&#39;  README.html
+pandoc --standalone --template 300000002.htm  300000006.md -o  index.html
+[WARNING] This document format requires a nonempty &lt;title&gt; element.
+  Defaulting to &#39;300000006&#39; as the title.
+  To specify a title, use &#39;title&#39; in metadata or --metadata title=&quot;...&quot;.
+sed -i &#39;&#39; -E &#39;s/(href=&quot;[0-9]+)\.md/\1\.html/g&#39;  index.html
+echo &quot;All-Things-Make-File&quot;
+All-Things-Make-File</code></pre>
+<h4>Open local index.html with your favourite Web-Browser</h4>
+<p>Use e.g. the <a href="9000144.html">Mac-Os-Finder</a> or the <a
+href="9000145.html">Ms-File-Explorer</a> to navigate into the
+<code>111-Directory</code> and then open the <code>index.html</code>
+File.</p>
+<h3 id="1001">Before-Day-14</h3>
+<p>Before the Day-14 it is possible to render the Project, but it is a
+bit more complicated. If you really need that, read <a
+href="23.html#2300">About-All-Dings</a> to find out, how this works.</p>
+<h2 id="1100">Dead-Dings-Files</h2>
+<p>If we create a duplicate Ding-File we have two Options. If the
+Dings-File has not used, we can silently delete the File, otherwise we
+write to the less used File the following Text:</p>
+<pre><code># Dings-Name (DEAD/DUPLICATE)
+
+This Dings-File is no longer maintained, [here](NEW-NUMBER.md) you can find its living Gemini.</code></pre>
+<p>We also mark the Dings-File as DEAD in the overall Naming-File:</p>
+<pre><code>60044.md       Technology
+60043.md       Output (DEAD)
+60042.md       Input</code></pre>
+	</div>
+</body>
+</html>

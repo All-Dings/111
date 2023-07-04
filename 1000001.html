@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="300000014.css" type="text/css"/>
+		<!-- Fontawesome: https://fontawesome.com/search?m=free&o=r -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta name="date" content=''>
+		<title>Blog-Chain-Time</title>
+	</head>
+
+	<script src="300030006.js"></script>
+
+	<body onload = "On_Load();">
+
+	<div class="Dings-Top-Nav" id="Dings-Top-Nav">
+		<a href="index.html">
+			<i class="fa fa-home"></i>
+		</a>
+		<a href="javascript:void(0);" class="Dings-Toggle-Side-Bar" id="Dings-Toggle-Side-Bar" onclick="Toggle_Side_Bar()">
+			<i class="fa fa-plus"></i>
+		</a>
+		<a href="23.html">About_Project</a>
+		<a href="21.html">About_Me</a>
+		<a href="17.html">All_Dings</a>
+		<a href="300000021.html" id="Dings-Under-Construction" style="Float:Right">Under_Construction!</a>
+		<a href="javascript:void(0);" class="icon" onclick="Toggle_Top_Nav_Responsive()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<div class="Dings-Side-Bar-Hide" id="Dings-Side-Bar">
+	</div>
+	<div class="Dings-Content" id="Dings-Content">
+	<h1>Blog-Chain-Time</h1>
+<p>In this Project inside Text Documents we use the so called
+Blog-Chain-Time or in short BCT.</p>
+<p>Example:</p>
+<pre><code>Blog-Chain-Time 2023.03.28-22:35 in Tübingen, After Micha and I ...</code></pre>
+<h2>Timestamp Format</h2>
+<p>Timestamps are specified as follows: YYYY.MM.DD-HH:MM:SS,F</p>
+<ul>
+<li>YYYY: Year</li>
+<li>MM: Month</li>
+<li>DD: Day</li>
+<li>HH: Hour</li>
+<li>MM: Minute</li>
+<li>SS: Second</li>
+<li>F: Decimal Fraction of a Second</li>
+</ul>
+<p>For Example the 4th of April 2021 at 11pm, 4 minutes, 10 seconds and
+91 Milliseconds is written as:</p>
+<pre><code>2021.04.04
+2021.04.04-23:04
+2021.04.04-23:04:10
+2021.04.04-23:04:10,091</code></pre>
+<p>If the Date is not required, specify only the Time:</p>
+<pre><code>23:04
+23:04:10
+23:04:10,091</code></pre>
+<p>If some Elements of the TimeStamp are not known, the Character ‘O’
+(like Open) is used to mark the uncertain Parts.</p>
+<pre><code>OOOO.04.OO
+20OO.04.OO
+2021.04.OO
+2021.04.04-OO:OO</code></pre>
+<h2>Standard Time Zone</h2>
+<p>Specify Date and Time in German (Central European) Time according to
+the current Summer/Daylight Time.</p>
+<p>For Example let’s say something happens in Germany at 2023.03.26 at
+1:58 (Winter Time):</p>
+<pre><code>2023.03.26-01:58 Something interesting happened</code></pre>
+<p>If three Minutes later another thing happens you have to write: ```
+2023.03.26-03:01 More interesting things happened</p>
+	</div>
+</body>
+</html>
