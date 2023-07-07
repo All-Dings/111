@@ -337,7 +337,6 @@ Code {
 
 /* ### Table */
 Table {
-	Display: Block;
 	Border-Collapse: Collapse;
 	Font-Variant-Numeric: Lining-Nums Tabular-Nums;
 	Margin: 1em 0;
@@ -362,6 +361,32 @@ Th {
 
 Td {
 	Padding: 0.125em 0.5em 0.25em 0.5em;
+}
+
+/* ### TeX-Table */
+.TeX-Table {
+	Border: none;
+	Border-Collapse: unset;
+	Width: 100%;
+}
+.TeX-Tr {
+	Border: none;
+}
+
+.TeX-Td-Left {
+	Border: none;
+	Width: 10%;
+}
+
+.TeX-Td-Equation {
+	Border: none;
+	Width: 80%;
+}
+
+.TeX-Td-Right {
+	Text-Align: Right;
+	Border: none;
+	Width: 80%;
 }
 
 /* ### Audio Controls */
