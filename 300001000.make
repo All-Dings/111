@@ -19,6 +19,14 @@ Jpg_File_List  := $(filter-out 0.jpg,$(Jpg_File_List)) # LFS-Problem
 Jpg_File_List  := $(filter-out 8.jpg,$(Jpg_File_List)) # LFS-Problem
 Jpg_File_List  := $(addprefix ${Dings_Day}/, $(Jpg_File_List))
 
+Png_File_List  := $(wildcard ${Work_Dir}/*.png)
+Png_File_List  := $(notdir $(Png_File_List))
+Png_File_List  := $(addprefix ${Dings_Day}/, $(Png_File_List))
+
+Pdf_File_List  := $(wildcard ${Work_Dir}/*.pdf)
+Pdf_File_List  := $(notdir $(Pdf_File_List))
+Pdf_File_List  := $(addprefix ${Dings_Day}/, $(Pdf_File_List))
+
 Mp3_File_List  := $(wildcard ${Work_Dir}/*.mp3)
 Mp3_File_List  := $(notdir $(Mp3_File_List))
 Mp3_File_List  := $(addprefix ${Dings_Day}/, $(Mp3_File_List))
@@ -30,6 +38,8 @@ Mp4_File_List  := $(addprefix ${Dings_Day}/, $(Mp4_File_List))
 Target_File_List := \
 	${Html_File_List} \
 	${Jpg_File_List} \
+	${Png_File_List} \
+	${Pdf_File_List} \
 	${Mp3_File_List} \
 	${Mp4_File_List} \
 	${Dings_Day}/index.html \
@@ -89,11 +99,18 @@ ${Dings_Day}/%.html: ${Work_Dir}/%.md
 ${Dings_Day}/%.jpg: ${Work_Dir}/%.jpg
 	$(call Render_Jpg_File, $<, $@)
 
+${Dings_Day}/%.png: ${Work_Dir}/%.png
+	cp $< $@
+
+${Dings_Day}/%.pdf: ${Work_Dir}/%.pdf
+	cp $< $@
+
 ${Dings_Day}/%.mp3: ${Work_Dir}/%.mp3
 	cp $< $@
 
 ${Dings_Day}/%.mp4: ${Work_Dir}/%.mp4
 	cp $< $@
+
 
 clean:
 	make -f 300000004.make clean
