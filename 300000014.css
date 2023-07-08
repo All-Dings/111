@@ -303,6 +303,19 @@ Img {
 	Max-Width: 100%;
 }
 
+/* #### Overlay-Image */
+.Overlay-Image-Container {
+	position: relative;
+	z-index: 0;
+}
+
+.Overlay-Image-Child {
+	position: absolute;
+	top 0;
+	left: 0;
+	z-index: 1;
+}
+
 /* ### Ordered-Lists and Unordered-Lists */
 Ol, Ul {
 	List-Style-Type: Circle;
